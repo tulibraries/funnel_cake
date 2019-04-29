@@ -15,6 +15,13 @@ Things you may want to cover:
 
 * Database initialization
 
+Under the hood, that command uses [traject](https://github.com/traject/traject), with hard coded defaults. If you need to override a default to ingest your data, You can call traject directly:
+
+``` bash
+bundle exec traject -c traject_indexer.rb sample_data.xml
+```
+
+
 * How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)
