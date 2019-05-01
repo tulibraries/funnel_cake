@@ -3,66 +3,75 @@
 # configuration_file.rb
 # Note that "#" is a comment, cause it's just ruby
 
+$:.unshift "./config"
+$:.unshift "./lib"
+require "yaml"
+
+solr_config = YAML.load_file("config/blacklight.yml")[(ENV["RAILS_ENV"] || "development")]
+solr_url = ERB.new(solr_config["url"]).result
+
 require "traject/macros/nokogiri_macros"
 extend Traject::Macros::NokogiriMacros
 
 settings do
-  # Where to find solr server to write to
-  provide "solr.url", "http://localhost:8983/solr"
-
-  # solr.version doesn't currently do anything, but set it
-  # anyway, in the future it will warn you if you have settings
-  # that may not work with your version.
-  provide "solr.version", "4.3.0"
-
-  # various others...
+  provide "solr.version", "8.0.0"
+	provide "solr_writer.max_skipped", -1
+	provide "solr_writer.commit_timeout", (15 * 60)
+  provide "solr.url", solr_url
   provide "solr_writer.commit_on_close", "true"
 
   provide "nokogiri.namespaces", {
     "oai" => "http://www.openarchives.org/OAI/2.0/",
     "dc" => "http://purl.org/dc/elements/1.1/",
-    "oai_dc" => "http://www.openarchives.org/OAI/2.0/oai_dc/"
+    "dcterms" => "http://purl.org/dc/terms/",
+    "oai_dc" => "http://www.openarchives.org/OAI/2.0/oai_dc/",
+    "edm" => "http://www.europeana.eu/schemas/edm/",
+    "dpla" => "http://dp.la/about/map/",
+    "schema" => "http://schema.org",
+    "oai_qdc" => "http://worldcat.org/xmlschemas/qdc-1.0/",
+    "svcs" => "http://rdfs.org/sioc/services"
   }
 
-  provide "nokogiri.each_record_xpath", "//oai:record" 
+  provide "nokogiri.each_record_xpath", "//record" 
 end
 
 # DPLA MAP
-to_field "collection", extract_xpath("//dcterms:isPartOf")
-to_field "contributor", extract_xpath("//dcterms:contributor")
-to_field "creator", extract_xpath("//dcterms:creator")
-to_field "date", extract_xpath("//dcterms:date")
-to_field "description", extract_xpath("//dcterms:description")
-to_field "extent", extract_xpath("//dcterms:extent")
-to_field "format", extract_xpath("//dcterms:format")
-to_field "identifier", extract_xpath("//dcterms:identifier")
-to_field "language", extract_xpath("//dcterms:language")
-to_field "spatial", extract_xpath("//dcterms:spatial")
-to_field "publisher", extract_xpath("//dcterms:publisher")
-to_field "relation", extract_xpath("//dcterms:relation")
-to_field "replacedBy", extract_xpath("//dcterms:isReplacedBy")
-to_field "replaces", extract_xpath("//dcterms:replaces")
+to_field "collection_tsim", extract_xpath("//dcterms:isPartOf")
+to_field "contributor_tsim", extract_xpath("//dcterms:contributor")
+to_field "creator_tsim", extract_xpath("//dcterms:creator")
+to_field "date_tsim", extract_xpath("//dcterms:date")
+to_field "description_tsim", extract_xpath("//dcterms:description")
+to_field "extent_tsim", extract_xpath("//dcterms:extent")
+to_field "format_tsim", extract_xpath("//dcterms:format")
+#to_field "identifier", extract_xpath("//dcterms:identifier")
+to_field "id", extract_xpath("//dcterms:identifier")
+to_field "language_tsim", extract_xpath("//dcterms:language")
+to_field "spatial_tsim", extract_xpath("//dcterms:spatial")
+to_field "publisher_tsim", extract_xpath("//dcterms:publisher")
+to_field "relation_tsim", extract_xpath("//dcterms:relation")
+to_field "replacedBy_tsim", extract_xpath("//dcterms:isReplacedBy")
+to_field "replaces_tsim", extract_xpath("//dcterms:replaces")
 
-to_field "rightsHolder", extract_xpath("//dcterms:rightsholder")
-to_field "source", extract_xpath("//dcterms:source")
-to_field "subject", extract_xpath("//dcterms:subject")
-to_field "genre", extract_xpath("//edm:hasType")
-to_field "temporalCoverage", extract_xpath("//dcterms:temporal")
-to_field "title", extract_xpath("//dcterms:title")
-to_field "type", extract_xpath("//dcterms:type")
+to_field "rightsHolder_tsim", extract_xpath("//dcterms:rightsholder")
+to_field "source_tsim", extract_xpath("//dcterms:source")
+to_field "subject_tsim", extract_xpath("//dcterms:subject")
+to_field "genre_tsim", extract_xpath("//edm:hasType")
+to_field "temporalCoverage_tsim", extract_xpath("//dcterms:temporal")
+to_field "title_tsim", extract_xpath("//dcterms:title")
+to_field "type_tsim", extract_xpath("//dcterms:type")
 
 # edm:WebResources
 
-to_field "fileFormat", extract_xpath("//schema:fileFormat")
-to_field "rights", extract_xpath("//dcterms:rights")
-to_field "rightsUri", extract_xpath("//edm:rights")
-to_field "iiifManifest", extract_xpath("//dcterms:isReferencedBy")
-to_field "iiifBaseUrl", extract_xpath("//svcs:hasService")
+to_field "fileFormat_tsim", extract_xpath("//schema:fileFormat")
+to_field "rights_tsim", extract_xpath("//dcterms:rights")
+to_field "rightsUri_tsim", extract_xpath("//edm:rights")
+to_field "iiifManifest_tsim", extract_xpath("//dcterms:isReferencedBy")
+to_field "iiifBaseUrl_tsim", extract_xpath("//svcs:hasService")
 
 # ore:Aggregation
 
-to_field "dataProvider", extract_xpath("edm:dataProvider")
-to_field "url", extract_xpath("edm:isShownAt")
-to_field "intermediateProvider", extract_xpath("dpla:intermediateProvider")
-to_field "preview", extract_xpath("edm:preview")
-to_field "provider", extract_xpath("edm:provider")
+to_field "dataProvider_tsim", extract_xpath("edm:dataProvider")
+to_field "url_display", extract_xpath("edm:isShownAt")
+to_field "intermediateProvider_display", extract_xpath("dpla:intermediateProvider")
+to_field "preview_display", extract_xpath("edm:preview")
+to_field "provider_display", extract_xpath("edm:provider")
