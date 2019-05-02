@@ -18,7 +18,7 @@ Things you may want to cover:
 Under the hood, that command uses [traject](https://github.com/traject/traject), with hard coded defaults. If you need to override a default to ingest your data, You can call traject directly:
 
 ``` bash
-bundle exec traject -c traject_indexer.rb sample_data.xml
+bundle exec traject -i xml -c combine_indexer.rb [path/to/combine_data.xml]
 ```
 
 
