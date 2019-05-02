@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<root>
 <record xmlns:dc="http://purl.org/dc/elements/1.1/"
         xmlns:dcterms="http://purl.org/dc/terms/"
         xmlns:edm="http://www.europeana.eu/schemas/edm/"
@@ -2695,4 +2696,5 @@
    <dcterms:isPartOf>Bryn Mawr College Photographs</dcterms:isPartOf>
    <edm:dataProvider>Bryn Mawr College</edm:dataProvider>
    <edm:provider>PA Digital</edm:provider>
-</record>
+ </record>
+ </root>

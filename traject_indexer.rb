@@ -33,6 +33,7 @@ settings do
   }
 
   provide "nokogiri.each_record_xpath", "//record" 
+  provide "nokogiri.strict_mode", "true"
 end
 
 # DPLA MAP
