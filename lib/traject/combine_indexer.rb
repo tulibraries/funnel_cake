@@ -32,8 +32,8 @@ settings do
     "svcs" => "http://rdfs.org/sioc/services"
   }
 
-  provide "nokogiri.each_record_xpath", "//record" 
-  provide "nokogiri.strict_mode", "true"
+  provide "nokogiri.each_record_xpath", "//oai:record"
+  provide "nokogiri.strict_mode", "false"
 end
 
 # DPLA MAP
