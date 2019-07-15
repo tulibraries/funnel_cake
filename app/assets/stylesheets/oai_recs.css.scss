@@ -1,0 +1,26 @@
+.document-thumbnail img{
+	width: 80px;
+}
+
+.show-thumbnail{
+	float: right;
+	padding: 10px;
+	img {
+		width: 150px;
+	}
+} 
+
+.default-thumbnail {
+	background: asset-data-url('default-thumbnail.png') no-repeat;
+	float: right;
+	padding: 10px;
+	background-size: 100px;
+	width: 100px;
+	height: 140px;
+}
+
+.view-object{
+  display: block;
+  padding-top: 5px;
+  text-align:center;
+}
