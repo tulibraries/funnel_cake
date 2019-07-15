@@ -32,6 +32,7 @@ class CatalogController < ApplicationController
     config.index.title_field = 'title_tsim'
     #config.index.display_type_field = 'format'
     #config.index.thumbnail_field = 'thumbnail_path_ss'
+    config.index.thumbnail_field = 'preview_ssim'
 
     config.add_results_document_tool(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
 
@@ -126,10 +127,10 @@ class CatalogController < ApplicationController
     config.add_show_field "iiifBaseUrl_ssim",  label: "IIIF Base URL"
 
     config.add_show_field  "dataProvider_ssim", label: "Data Provider"
-    config.add_show_field  "url_display", label: "URL"
-    config.add_show_field  "intermediateProvider_display", label: "Intermediate Provider"
-    config.add_show_field  "preview_display", label: "Preview"
-    config.add_show_field  "provider_display", label: "Provider"
+    config.add_show_field  "url_ssim", label: "URL"
+    config.add_show_field  "intermediateProvider_ssim", label: "Intermediate Provider"
+    config.add_show_field  "preview_ssim", label: "Preview"
+    config.add_show_field  "provider_ssim", label: "Provider"
 
 # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
