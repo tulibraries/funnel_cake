@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-class CatalogController < ApplicationController # ~> NameError: uninitialized constant ApplicationController
+class CatalogController < ApplicationController
 
   include Blacklight::Catalog
 
@@ -48,7 +48,7 @@ class CatalogController < ApplicationController # ~> NameError: uninitialized co
     config.add_nav_action(:search_history, partial: 'blacklight/nav/search_history')
 
     # solr field configuration for document/show views
-    #config.show.title_field = 'title_tsim' # =>
+    #config.show.title_field = 'title_tsim' 
     #config.show.display_type_field = 'format'
     #config.show.thumbnail_field = 'thumbnail_path_ss'
 
@@ -99,27 +99,42 @@ class CatalogController < ApplicationController # ~> NameError: uninitialized co
     #   The ordering of the field names is the order of the display
     config.add_show_field "title_ssim", label: "Title"
     config.add_show_field "alternativeTitle_ssim", label: "Alternative Title"
-    config.add_show_field "creator_ssim", label: "Creator"
-    config.add_show_field "contributor_ssim", label: "Contributor"
-    config.add_show_field "subject_ssim", label: "Subject"
-    config.add_show_field "spatial_ssim", label: "Place"
-    config.add_show_field "temporalCoverage_ssim", label: "Temporal Coverage"
-    config.add_show_field "type_tsim", label: "Type"
-    config.add_show_field "format", label: "Format"
-    config.add_show_field "language_ssim", label: "Language"
-    config.add_show_field "date_ssim", label: "Date"
-    config.add_show_field "description_tsim", label: "Description"
-    config.add_show_field "extent_ssim", label: "Extent"
-    config.add_show_field "publisher_ssim", label: "Publisher"
-    config.add_show_field "relation_ssim", label: "Relation"
-    config.add_show_field "replacedBy_ssim", label: "Replaced By"
-    config.add_show_field "replaces_ssim", label: "Replaces"
-    config.add_show_field "rightsHolder_ssim", label: "Rights Holder"
-    config.add_show_field "source_ssim", label: "Source"
-    config.add_show_field 'id', label: "Identifier"
-    config.add_show_field "fileFormat_ssim",  label: "File Format"
-    config.add_show_field "rights_ssim",  label: "Rights"
+    config.add_show_field "creator_ssim", label: "Creator", link_to_facet: true
 
+    config.add_show_field "contributor_ssim", label: "Contributor", link_to_facet: true
+    config.add_show_field "subject_ssim", label: "Subject", link_to_facet: true
+    config.add_show_field "spatial_ssim", label: "Place", link_to_facet: true
+
+    config.add_show_field "temporalCoverage_ssim", label: "Temporal Coverage", link_to_facet: true
+
+    config.add_show_field "type_tsim", label: "Type", link_to_facet: true
+
+    config.add_show_field "format", label: "Format", link_to_facet: true
+
+    config.add_show_field "language_ssim", label: "Language", link_to_facet: true
+
+    config.add_show_field "date_ssim", label: "Date", link_to_facet: true
+
+    config.add_show_field "description_tsim", label: "Description"
+    config.add_show_field "extent_ssim", label: "Extent", link_to_facet: true
+
+    config.add_show_field "publisher_ssim", label: "Publisher", link_to_facet: true
+
+    config.add_show_field "relation_ssim", label: "Relation", link_to_facet: true
+
+    config.add_show_field "replacedBy_ssim", label: "Replaced By", link_to_facet: true
+
+    config.add_show_field "replaces_ssim", label: "Replaces", link_to_facet: true
+
+    config.add_show_field "rightsHolder_ssim", label: "Rights Holder", link_to_facet: true
+
+    config.add_show_field "source_ssim", label: "Source", link_to_facet: true
+
+    config.add_show_field 'id', label: "Identifier"
+
+    config.add_show_field "fileFormat_ssim",  label: "File Format", link_to_facet: true
+
+    config.add_show_field "rights_ssim",  label: "Rights", link_to_facet: true
 
     #config.add_show_field "collection_ssim", label: "Collection"
 
@@ -212,8 +227,3 @@ class CatalogController < ApplicationController # ~> NameError: uninitialized co
     # config.autocomplete_suggester = 'mySuggester'
   end
 end
-
-# ~> NameError
-# ~> uninitialized constant ApplicationController
-# ~>
-# ~> /tmp/seeing_is_believing_temp_dir20190718-470-1g9q8ph/program.rb:2:in `<main>'
