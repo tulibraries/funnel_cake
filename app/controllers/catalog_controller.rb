@@ -76,7 +76,7 @@ class CatalogController < ApplicationController
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
-    config.add_facet_field "format", label: "Format"
+    config.add_facet_field "format_ssim", label: "Format"
     config.add_facet_field "date_ssim", label: "Publication Year", single: true
     config.add_facet_field "subject_ssim", label: "Topic", limit: 20, index_range: "A".."Z"
     config.add_facet_field "language_ssim", label: "Language", limit: true
@@ -90,7 +90,7 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     config.add_index_field "id", label: "ID"
     config.add_index_field "creator_ssim", label: "Creator"
-    config.add_index_field "format", label: "Format"
+    config.add_index_field "format_ssim", label: "Format"
     config.add_index_field "language_ssim", label: "Language"
     config.add_index_field "date_ssim", label: "Published"
     config.add_index_field "description_tsim", label: "Description"
@@ -107,20 +107,20 @@ class CatalogController < ApplicationController
 
     config.add_show_field "temporalCoverage_ssim", label: "Temporal Coverage", link_to_facet: true
 
-    config.add_show_field "type_tsim", label: "Type", link_to_facet: true
+    config.add_show_field "type_ssim", label: "Type", link_to_facet: true
 
-    config.add_show_field "format", label: "Format", link_to_facet: true
+    config.add_show_field "format_ssim", label: "Format", link_to_facet: true
 
     config.add_show_field "language_ssim", label: "Language", link_to_facet: true
 
     config.add_show_field "date_ssim", label: "Date", link_to_facet: true
 
-    config.add_show_field "description_tsim", label: "Description"
+    config.add_show_field "description_tsim", label: "Description", helper_method: "autolinker"
     config.add_show_field "extent_ssim", label: "Extent", link_to_facet: true
 
     config.add_show_field "publisher_ssim", label: "Publisher", link_to_facet: true
 
-    config.add_show_field "relation_ssim", label: "Relation", link_to_facet: true
+    config.add_show_field "relation_ssim", label: "Relation", link_to_facet: true, helper_method: "autolinker"
 
     config.add_show_field "replacedBy_ssim", label: "Replaced By", link_to_facet: true
 
@@ -134,7 +134,7 @@ class CatalogController < ApplicationController
 
     config.add_show_field "fileFormat_ssim",  label: "File Format", link_to_facet: true
 
-    config.add_show_field "rights_ssim",  label: "Rights", link_to_facet: true
+    config.add_show_field "rights_ssim",  label: "Rights", helper_method: "autolinker"
 
     #config.add_show_field "collection_ssim", label: "Collection"
 
