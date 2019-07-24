@@ -88,12 +88,9 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-    config.add_index_field 'id', label: 'ID'
-    config.add_index_field 'creator_ssim', label: 'Creator'
-    config.add_index_field 'format', label: 'Format'
-    config.add_index_field 'language_ssim', label: 'Language'
-    config.add_index_field 'date_ssim', label: 'Published'
-    config.add_index_field 'description_tsim', label: 'Description'
+    config.add_index_field "type_tsim", label: "Type"
+    config.add_index_field "contributor_ssim", label: "Contributor"
+    config.add_index_field "collection_ssim", label: "Collection"
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
