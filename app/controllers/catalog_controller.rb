@@ -32,6 +32,7 @@ class CatalogController < ApplicationController
     config.index.title_field = 'title_tsim'
     #config.index.display_type_field = 'format'
     #config.index.thumbnail_field = 'thumbnail_path_ss'
+    config.index.thumbnail_field = 'preview_ssim'
 
     config.add_results_document_tool(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
 
