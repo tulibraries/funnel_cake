@@ -187,11 +187,11 @@ class CatalogController < ApplicationController
       }
     end
 
-    config.add_search_field('author') do |field|
+    config.add_search_field('creator') do |field|
       field.solr_parameters = {
-        'spellcheck.dictionary': 'author',
-        qf: '${author_qf}',
-        pf: '${author_pf}'
+        'spellcheck.dictionary': 'creator',
+        qf: '${creator_qf}',
+        pf: '${creator_pf}'
       }
     end
 
@@ -213,7 +213,7 @@ class CatalogController < ApplicationController
     # except in the relevancy case).
     config.add_sort_field 'score desc, pub_date_si desc, title_si asc', label: 'relevance'
     config.add_sort_field 'pub_date_si desc, title_si asc', label: 'year'
-    config.add_sort_field 'author_si asc, title_si asc', label: 'author'
+    config.add_sort_field 'creator_si asc, title_si asc', label: 'creator'
     config.add_sort_field 'title_si asc, pub_date_si desc', label: 'title'
 
     # If there are more than this many search results, no spelling ("did you
