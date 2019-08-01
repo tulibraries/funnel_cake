@@ -49,7 +49,7 @@ class CatalogController < ApplicationController
     config.add_nav_action(:search_history, partial: 'blacklight/nav/search_history')
 
     # solr field configuration for document/show views
-    #config.show.title_field = 'title_tsim'
+    #config.show.title_field = 'title_tsim' 
     #config.show.display_type_field = 'format'
     #config.show.thumbnail_field = 'thumbnail_path_ss'
 
@@ -77,10 +77,10 @@ class CatalogController < ApplicationController
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
-    config.add_facet_field 'format', label: 'Format'
-    config.add_facet_field 'date_ssim', label: 'Publication Year', single: true
-    config.add_facet_field 'subject_ssim', label: 'Topic', limit: 20, index_range: 'A'..'Z'
-    config.add_facet_field 'language_ssim', label: 'Language', limit: true
+    config.add_facet_field "format_ssim", label: "Format"
+    config.add_facet_field "date_ssim", label: "Publication Year", single: true
+    config.add_facet_field "subject_ssim", label: "Topic", limit: 20, index_range: "A".."Z"
+    config.add_facet_field "language_ssim", label: "Language", limit: true
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -89,45 +89,69 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-    config.add_index_field "type_tsim", label: "Type"
-    config.add_index_field "contributor_ssim", label: "Contributor"
-    config.add_index_field "collection_ssim", label: "Collection"
+    config.add_index_field "id", label: "ID"
+    config.add_index_field "creator_ssim", label: "Creator"
+    config.add_index_field "format_ssim", label: "Format"
+    config.add_index_field "language_ssim", label: "Language"
+    config.add_index_field "date_ssim", label: "Published"
+    config.add_index_field "description_tsim", label: "Description"
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
     config.add_show_field "title_ssim", label: "Title"
-    config.add_show_field "type_tsim", label: "Type"
-    config.add_show_field "collection_ssim", label: "Collection"
-    config.add_show_field "contributor_ssim", label: "Contributor"
-    config.add_show_field "creator_ssim", label: "Creator"
-    config.add_show_field "date_ssim", label: "Date"
-    config.add_show_field "description_tsim", label: "Description"
-    config.add_show_field "extent_ssim", label: "Extent"
-    config.add_show_field "format", label: "Format"
-    config.add_show_field "language_ssim", label: "Language"
-    config.add_show_field "spatial_ssim", label: "Spatial"
-    config.add_show_field "publisher_ssim", label: "Publisher"
-    config.add_show_field "relation_ssim", label: "Relation"
-    config.add_show_field "replacedBy_ssim", label: "Replaced By"
-    config.add_show_field "replaces_ssim", label: "Replaces"
+    config.add_show_field "alternativeTitle_ssim", label: "Alternative Title"
+    config.add_show_field "creator_ssim", label: "Creator", link_to_facet: true
 
-    config.add_show_field "rightsHolder_ssim", label: "Rights Holder"
-    config.add_show_field "source_ssim", label: "Source"
-    config.add_show_field "subject_ssim", label: "Subject"
-    config.add_show_field "genre_ssim", label: "Genre"
-    config.add_show_field "temporalCoverage_ssim", label: "Temporal Coverage"
+    config.add_show_field "contributor_ssim", label: "Contributor", link_to_facet: true
+    config.add_show_field "subject_ssim", label: "Subject", link_to_facet: true
+    config.add_show_field "spatial_ssim", label: "Place", link_to_facet: true
 
-    config.add_show_field "fileFormat_ssim",  label: "FileFormat"
-    config.add_show_field "rights_ssim",  label: "Rights"
-    config.add_show_field "rightsUri_ssim",  label: "Rights Link"
-    config.add_show_field "iiifManifest_ssim",  label: "IIIF Manifest"
-    config.add_show_field "iiifBaseUrl_ssim",  label: "IIIF Base URL"
+    config.add_show_field "temporalCoverage_ssim", label: "Temporal Coverage", link_to_facet: true
 
-    config.add_show_field  "dataProvider_ssim", label: "Data Provider"
-    config.add_show_field  "url_ssim", label: "URL"
-    config.add_show_field  "intermediateProvider_ssim", label: "Intermediate Provider"
-    config.add_show_field  "preview_ssim", label: "Preview"
-    config.add_show_field  "provider_ssim", label: "Provider"
+    config.add_show_field "type_ssim", label: "Type", link_to_facet: true
+
+    config.add_show_field "format_ssim", label: "Format", link_to_facet: true
+
+    config.add_show_field "language_ssim", label: "Language", link_to_facet: true
+
+    config.add_show_field "date_ssim", label: "Date", link_to_facet: true
+
+    config.add_show_field "description_tsim", label: "Description", helper_method: "autolinker"
+    config.add_show_field "extent_ssim", label: "Extent", link_to_facet: true
+
+    config.add_show_field "publisher_ssim", label: "Publisher", link_to_facet: true
+
+    config.add_show_field "relation_ssim", label: "Relation", link_to_facet: true, helper_method: "autolinker"
+
+    config.add_show_field "replacedBy_ssim", label: "Replaced By", link_to_facet: true
+
+    config.add_show_field "replaces_ssim", label: "Replaces", link_to_facet: true
+
+    config.add_show_field "rightsHolder_ssim", label: "Rights Holder", link_to_facet: true
+
+    config.add_show_field "source_ssim", label: "Source", link_to_facet: true
+
+    config.add_show_field 'id', label: "Identifier"
+
+    config.add_show_field "fileFormat_ssim",  label: "File Format", link_to_facet: true
+
+    config.add_show_field "rights_ssim",  label: "Rights", helper_method: "autolinker"
+
+    #config.add_show_field "collection_ssim", label: "Collection"
+
+    #config.add_show_field "genre_ssim", label: "Genre"
+
+    #config.add_show_field "fileFormat_ssim",  label: "FileFormat"
+    #config.add_show_field "rights_ssim",  label: "Rights"
+    #config.add_show_field "rightsUri_ssim",  label: "Rights Link"
+    #config.add_show_field "iiifManifest_ssim",  label: "IIIF Manifest"
+    #config.add_show_field "iiifBaseUrl_ssim",  label: "IIIF Base URL"
+
+    #config.add_show_field  "dataProvider_ssim", label: "Data Provider"
+    #config.add_show_field  "url_display", label: "URL"
+    #config.add_show_field  "intermediateProvider_display", label: "Intermediate Provider"
+    #config.add_show_field  "preview_display", label: "Preview"
+    #config.add_show_field  "provider_display", label: "Provider"
 
 # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
