@@ -135,14 +135,12 @@ class CatalogController < ApplicationController
 
     config.add_show_field "fileFormat_ssim",  label: "File Format", link_to_facet: true
 
-    config.add_show_field "rights_ssim",  label: "Rights", helper_method: "autolinker"
-
     #config.add_show_field "collection_ssim", label: "Collection"
 
     #config.add_show_field "genre_ssim", label: "Genre"
 
     #config.add_show_field "fileFormat_ssim",  label: "FileFormat"
-    #config.add_show_field "rights_ssim",  label: "Rights"
+    config.add_show_field "rights_tsim",  label: "Rights"
     #config.add_show_field "rightsUri_ssim",  label: "Rights Link"
     #config.add_show_field "iiifManifest_ssim",  label: "IIIF Manifest"
     #config.add_show_field "iiifBaseUrl_ssim",  label: "IIIF Base URL"
@@ -212,6 +210,13 @@ class CatalogController < ApplicationController
         'spellcheck.dictionary': 'subject',
         qf: '${subject_qf}',
         pf: '${subject_pf}'
+      }
+    end
+
+    config.add_search_field('rights') do |field|
+      field.solr_parameters = {
+        qf: '${rights_qf}',
+        pf: '${rights_pf}'
       }
     end
 

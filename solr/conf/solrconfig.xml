@@ -51,6 +51,7 @@
           creator_tsim
           contributingInstitution_tsim
           subject_tsim
+          rights_tsim
           all_text_timv
         </str>
         <str name="pf">
@@ -79,6 +80,11 @@
           subject_tsim
        </str>
        <str name="subject_pf">
+       </str>
+       <str name="rights_qf">
+          rights_tsim
+       </str>
+       <str name="rights_pf">
        </str>
 
        <str name="fl">

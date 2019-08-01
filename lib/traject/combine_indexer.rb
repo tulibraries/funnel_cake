@@ -65,7 +65,7 @@ to_field "type_ssim", extract_xpath("//dcterms:type")
 # edm:WebResources
 
 to_field "fileFormat_ssim", extract_xpath("//schema:fileFormat")
-to_field "rights_ssim", extract_xpath("//dcterms:rights")
+to_field "rights_tsim", extract_xpath("//dcterms:rights")
 to_field "rightsUri_ssim", extract_xpath("//edm:rights")
 to_field "iiifManifest_ssim", extract_xpath("//dcterms:isReferencedBy")
 to_field "iiifBaseUrl_ssim", extract_xpath("//svcs:hasService")
