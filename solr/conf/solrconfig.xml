@@ -52,6 +52,7 @@
           contributingInstitution_tsim
           subject_tsim
           rights_tsim
+          rightsUri_tsim
           all_text_timv
         </str>
         <str name="pf">
@@ -85,6 +86,11 @@
           rights_tsim
        </str>
        <str name="rights_pf">
+       </str>
+       <str name="rightsUri_qf">
+          rightsUri_tsim
+       </str>
+       <str name="rightsUri_pf">
        </str>
 
        <str name="fl">
