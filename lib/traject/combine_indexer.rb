@@ -72,7 +72,7 @@ to_field "iiifBaseUrl_ssim", extract_xpath("//svcs:hasService")
 
 # ore:Aggregation
 
-to_field "dataProvider_ssim", extract_xpath("//edm:dataProvider")
+to_field "contributingInstitution_tsim", extract_xpath("//edm:dataProvider")
 to_field "url_ssim", extract_xpath("//edm:isShownAt")
 to_field "intermediateProvider_ssim", extract_xpath("//dpla:intermediateProvider")
 to_field "preview_ssim", extract_xpath("//edm:preview")

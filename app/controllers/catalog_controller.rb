@@ -148,6 +148,7 @@ class CatalogController < ApplicationController
     #config.add_show_field "iiifBaseUrl_ssim",  label: "IIIF Base URL"
 
     #config.add_show_field  "dataProvider_ssim", label: "Data Provider"
+    config.add_show_field  "contributingInstitution_tsim", label: "Contributing Institution", link_to_facet: true
     #config.add_show_field  "url_display", label: "URL"
     #config.add_show_field  "intermediateProvider_display", label: "Intermediate Provider"
     #config.add_show_field  "preview_display", label: "Preview"
@@ -192,6 +193,13 @@ class CatalogController < ApplicationController
         'spellcheck.dictionary': 'creator',
         qf: '${creator_qf}',
         pf: '${creator_pf}'
+      }
+    end
+
+    config.add_search_field('contributingInstitution') do |field|
+      field.solr_parameters = {
+        qf: '${contributingInstitution_qf}',
+        pf: '${contributingInstitution_pf}'
       }
     end
 

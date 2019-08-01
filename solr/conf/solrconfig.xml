@@ -49,6 +49,7 @@
           active_fedora_model_ssi
           title_tsim
           creator_tsim
+          contributingInstitution_tsim
           subject_tsim
           all_text_timv
         </str>
@@ -60,6 +61,11 @@
           creator_tsim
        </str>
        <str name="creator_pf">
+       </str>
+       <str name="contributingInstitution_qf">
+          contributingInstitution_tsim
+       </str>
+       <str name="contributingInstitution_pf">
        </str>
        <str name="title_qf">
           title_tsim
