@@ -1,15 +1,15 @@
 sudo: false
-
+cache:
+  directories:
+    - tmp/solr_dl/
 language: ruby
-
 rvm:
   - 2.5.1
-
 services:
   - postgresql
-
 env:
   - TZ=America/New_York
+jdk: oraclejdk9
 
 before_install:
   - gem update --system
@@ -19,14 +19,15 @@ before_script:
   - psql -c "create role funcake with createdb login password 'password';" -U postgres
   - RAILS_ENV=test bundle exec rake db:setup
   - RAILS_ENV=test bundle exec rake db:seed
+  - RAILS_ENV=test bundle exec rake db:migrate
   - nvm install node
   - npm install -g ajv
   - npm install -g ajv-cli
 
 script:
-  - bundle exec rubocop
-  - bundle exec brakeman
-  - bundle exec rspec spec
+  # please add here however you run your test suite
+  # until we have that here, this will always fail
+  - false
 
 after_success:
   - true
