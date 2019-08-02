@@ -36,7 +36,7 @@
        <float name="tie">0.01</float>
        <!-- this qf and pf are used by default, if not otherwise specified by
             client. The default blacklight_config will use these for the
-            "keywords" search. See the author_qf/author_pf, title_qf, etc
+            "keywords" search. See the creator_qf/creator_pf, title_qf, etc
             below, which the default blacklight_config will specify for
             those searches. You may also be interested in:
             http://wiki.apache.org/solr/LocalParams
@@ -48,18 +48,26 @@
           alternative_title_tsim
           active_fedora_model_ssi
           title_tsim
-          author_tsim
+          creator_tsim
+          contributingInstitution_tsim
           subject_tsim
+          rights_tsim
+          rightsUri_tsim
           all_text_timv
         </str>
         <str name="pf">
           all_text_timv^10
         </str>
 
-       <str name="author_qf">
-          author_tsim
+       <str name="creator_qf">
+          creator_tsim
        </str>
-       <str name="author_pf">
+       <str name="creator_pf">
+       </str>
+       <str name="contributingInstitution_qf">
+          contributingInstitution_tsim
+       </str>
+       <str name="contributingInstitution_pf">
        </str>
        <str name="title_qf">
           title_tsim
@@ -73,6 +81,16 @@
           subject_tsim
        </str>
        <str name="subject_pf">
+       </str>
+       <str name="rights_qf">
+          rights_tsim
+       </str>
+       <str name="rights_pf">
+       </str>
+       <str name="rightsUri_qf">
+          rightsUri_tsim
+       </str>
+       <str name="rightsUri_pf">
        </str>
 
        <str name="fl">
@@ -142,9 +160,9 @@
       <str name="buildOnOptimize">true</str>
     </lst>
     <lst name="spellchecker">
-      <str name="name">author</str>
-      <str name="field">author_spell</str>
-      <str name="spellcheckIndexDir">./spell_author</str>
+      <str name="name">creator</str>
+      <str name="field">creator_spell</str>
+      <str name="spellcheckIndexDir">./spell_creator</str>
       <str name="accuracy">0.7</str>
       <str name="buildOnOptimize">true</str>
     </lst>

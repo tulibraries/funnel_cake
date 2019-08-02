@@ -135,19 +135,18 @@ class CatalogController < ApplicationController
 
     config.add_show_field "fileFormat_ssim",  label: "File Format", link_to_facet: true
 
-    config.add_show_field "rights_ssim",  label: "Rights", helper_method: "autolinker"
-
     #config.add_show_field "collection_ssim", label: "Collection"
 
     #config.add_show_field "genre_ssim", label: "Genre"
 
     #config.add_show_field "fileFormat_ssim",  label: "FileFormat"
-    #config.add_show_field "rights_ssim",  label: "Rights"
-    #config.add_show_field "rightsUri_ssim",  label: "Rights Link"
+    config.add_show_field "rights_tsim",  label: "Rights", helper_method: "autolinker"
+    config.add_show_field "rightsUri_tsim",  label: "Rights Link", link_to_facet: true
     #config.add_show_field "iiifManifest_ssim",  label: "IIIF Manifest"
     #config.add_show_field "iiifBaseUrl_ssim",  label: "IIIF Base URL"
 
     #config.add_show_field  "dataProvider_ssim", label: "Data Provider"
+    config.add_show_field  "contributingInstitution_tsim", label: "Contributing Institution", link_to_facet: true
     #config.add_show_field  "url_display", label: "URL"
     #config.add_show_field  "intermediateProvider_display", label: "Intermediate Provider"
     #config.add_show_field  "preview_display", label: "Preview"
@@ -187,11 +186,18 @@ class CatalogController < ApplicationController
       }
     end
 
-    config.add_search_field('author') do |field|
+    config.add_search_field('creator') do |field|
       field.solr_parameters = {
-        'spellcheck.dictionary': 'author',
-        qf: '${author_qf}',
-        pf: '${author_pf}'
+        'spellcheck.dictionary': 'creator',
+        qf: '${creator_qf}',
+        pf: '${creator_pf}'
+      }
+    end
+
+    config.add_search_field('contributingInstitution') do |field|
+      field.solr_parameters = {
+        qf: '${contributingInstitution_qf}',
+        pf: '${contributingInstitution_pf}'
       }
     end
 
@@ -207,13 +213,27 @@ class CatalogController < ApplicationController
       }
     end
 
+    config.add_search_field('rights') do |field|
+      field.solr_parameters = {
+        qf: '${rights_qf}',
+        pf: '${rights_pf}'
+      }
+    end
+
+    config.add_search_field('rightsUri', label: "Rights URL") do |field|
+      field.solr_parameters = {
+        qf: '${rightsUri_qf}',
+        pf: '${rightsUri_pf}'
+      }
+    end
+
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
     config.add_sort_field 'score desc, pub_date_si desc, title_si asc', label: 'relevance'
     config.add_sort_field 'pub_date_si desc, title_si asc', label: 'year'
-    config.add_sort_field 'author_si asc, title_si asc', label: 'author'
+    config.add_sort_field 'creator_si asc, title_si asc', label: 'creator'
     config.add_sort_field 'title_si asc, pub_date_si desc', label: 'title'
 
     # If there are more than this many search results, no spelling ("did you

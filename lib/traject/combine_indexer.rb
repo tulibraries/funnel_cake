@@ -41,7 +41,7 @@ to_field "id", extract_xpath("//dcterms:identifier")
 to_field "alternativeTitle_ssim", extract_xpath("//dcterms:alternative")
 to_field "collection_ssim", extract_xpath("//dcterms:isPartOf")
 to_field "contributor_ssim", extract_xpath("//dcterms:contributor")
-to_field "creator_ssim", extract_xpath("//dcterms:creator")
+to_field "creator_tsim", extract_xpath("//dcterms:creator")
 to_field "date_ssim", extract_xpath("//dcterms:date")
 to_field "description_tsim", extract_xpath("//dcterms:description")
 to_field "extent_ssim", extract_xpath("//dcterms:extent")
@@ -65,14 +65,14 @@ to_field "type_ssim", extract_xpath("//dcterms:type")
 # edm:WebResources
 
 to_field "fileFormat_ssim", extract_xpath("//schema:fileFormat")
-to_field "rights_ssim", extract_xpath("//dcterms:rights")
-to_field "rightsUri_ssim", extract_xpath("//edm:rights")
+to_field "rights_tsim", extract_xpath("//dcterms:rights")
+to_field "rightsUri_tsim", extract_xpath("//edm:rights")
 to_field "iiifManifest_ssim", extract_xpath("//dcterms:isReferencedBy")
 to_field "iiifBaseUrl_ssim", extract_xpath("//svcs:hasService")
 
 # ore:Aggregation
 
-to_field "dataProvider_ssim", extract_xpath("//edm:dataProvider")
+to_field "contributingInstitution_tsim", extract_xpath("//edm:dataProvider")
 to_field "url_ssim", extract_xpath("//edm:isShownAt")
 to_field "intermediateProvider_ssim", extract_xpath("//dpla:intermediateProvider")
 to_field "preview_ssim", extract_xpath("//edm:preview")

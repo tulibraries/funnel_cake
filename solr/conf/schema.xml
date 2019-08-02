@@ -221,7 +221,7 @@
   <copyField source="*_ssim" dest="spell"/>
   <copyField source="*_si" dest="spell"/>
 
-  <copyField source="author_tsim" dest="author_spell"/>
+  <copyField source="creator_tsim" dest="creator_spell"/>
   <copyField source="subject_ssim" dest="subject_spell"/>
   <copyField source="title_tsim" dest="title_spell"/>
 
