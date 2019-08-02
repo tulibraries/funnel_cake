@@ -1,3 +1,4 @@
 en:
   blacklight:
-    application_name: 'Funnel Cake'
+    application_name: "Funnel Cake"
+    welcome: "Welcome"
