@@ -103,12 +103,12 @@ class CatalogController < ApplicationController
     config.add_show_field "creator_ssim", label: "Creator", link_to_facet: true
 
     config.add_show_field "contributor_ssim", label: "Contributor", link_to_facet: true
-    config.add_show_field "subject_ssim", label: "Subject", link_to_facet: true
+    config.add_show_field "subject_ssim", label: "Subject", helper_method: :delimited_link_to_facet
     config.add_show_field "spatial_ssim", label: "Place", link_to_facet: true
 
     config.add_show_field "temporalCoverage_ssim", label: "Temporal Coverage", link_to_facet: true
 
-    config.add_show_field "type_ssim", label: "Type", link_to_facet: true
+    config.add_show_field "type_ssim", label: "Type", helper_method: :delimited_link_to_facet
 
     config.add_show_field "format_ssim", label: "Format", link_to_facet: true
 
