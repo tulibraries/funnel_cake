@@ -2,3 +2,4 @@ en:
   blacklight:
     application_name: "Funnel Cake"
     welcome: "Welcome"
+    about: "About"
