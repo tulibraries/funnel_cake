@@ -98,11 +98,11 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
-    config.add_show_field "title_ssim", label: "Title"
+    config.add_show_field "title_ssim", label: "Title", helper_method: :delimited_link_to_facet
     config.add_show_field "alternativeTitle_ssim", label: "Alternative Title", helper_method: :delimited_link_to_facet
     config.add_show_field "creator_ssim", label: "Creator", helper_method: :delimited_link_to_facet
 
-    config.add_show_field "contributor_ssim", label: "Contributor", link_to_facet: true
+    config.add_show_field "contributor_ssim", label: "Contributor", helper_method: :delimited_link_to_facet
     config.add_show_field "subject_ssim", label: "Subject", helper_method: :delimited_link_to_facet
     config.add_show_field "spatial_ssim", label: "Place", helper_method: :delimited_link_to_facet
 
@@ -116,16 +116,16 @@ class CatalogController < ApplicationController
 
     config.add_show_field "date_ssim", label: "Date", helper_method: :delimited_link_to_facet
 
-    config.add_show_field "description_tsim", label: "Description", helper_method: "autolinker"
+    config.add_show_field "description_tsim", label: "Description", helper_method: :autolinker
     config.add_show_field "extent_ssim", label: "Extent", helper_method: :delimited_link_to_facet
 
     config.add_show_field "publisher_ssim", label: "Publisher", helper_method: :delimited_link_to_facet
 
-    config.add_show_field "relation_ssim", label: "Relation", link_to_facet: true, helper_method: "autolinker"
+    config.add_show_field "relation_ssim", label: "Relation", link_to_facet: true, helper_method: :autolinker
 
-    config.add_show_field "replacedBy_ssim", label: "Replaced By", link_to_facet: true
+    config.add_show_field "replacedBy_ssim", label: "Replaced By", helper_method: :delimited_link_to_facet
 
-    config.add_show_field "replaces_ssim", label: "Replaces", link_to_facet: true
+    config.add_show_field "replaces_ssim", label: "Replaces", helper_method: :delimited_link_to_facet
 
     config.add_show_field "rightsHolder_ssim", label: "Rights Holder", helper_method: :delimited_link_to_facet
 
@@ -135,24 +135,21 @@ class CatalogController < ApplicationController
 
     config.add_show_field "fileFormat_ssim",  label: "File Format", helper_method: :delimited_link_to_facet
 
-    config.add_show_field "rights_ssim",  label: "Rights", helper_method: "autolinker"
+    config.add_show_field "rights_ssim",  label: "Rights", helper_method: :autolinker
+    config.add_show_field "rightsUri_tsim",  label: "Rights Link", helper_method: :delimited_link_to_facet
 
     config.add_show_field "collection_ssim", label: "Collection", helper_method: :delimited_link_to_facet
 
     config.add_show_field "genre_ssim", label: "Genre", helper_method: :delimited_link_to_facet
 
-    #config.add_show_field "fileFormat_ssim",  label: "FileFormat"
-    config.add_show_field "rights_tsim",  label: "Rights", helper_method: "autolinker"
-    config.add_show_field "rightsUri_tsim",  label: "Rights Link", link_to_facet: true
-    #config.add_show_field "iiifManifest_ssim",  label: "IIIF Manifest"
-    #config.add_show_field "iiifBaseUrl_ssim",  label: "IIIF Base URL"
+    config.add_show_field "iiifManifest_ssim",  label: "IIIF Manifest", helper_method: :delimited_link_to_facet
+    config.add_show_field "iiifBaseUrl_ssim",  label: "IIIF Base URL", helper_method: :delimited_link_to_facet
 
-    #config.add_show_field  "dataProvider_ssim", label: "Data Provider"
-    config.add_show_field  "contributingInstitution_tsim", label: "Contributing Institution", link_to_facet: true
-    #config.add_show_field  "url_display", label: "URL"
-    #config.add_show_field  "intermediateProvider_display", label: "Intermediate Provider"
-    #config.add_show_field  "preview_display", label: "Preview"
-    #config.add_show_field  "provider_display", label: "Provider"
+    config.add_show_field  "contributingInstitution_tsim", label: "Contributing Institution", helper_method: :delimited_link_to_facet
+    config.add_show_field  "url_ssim", label: "URL", helper_method: :autolinker
+    config.add_show_field  "intermediateProvider_ssim", label: "Intermediate Provider", helper_method: :delimited_link_to_facet
+    config.add_show_field  "preview_ssim", label: "Preview", helper_method: :autolinker
+    config.add_show_field  "provider_ssim", label: "Provider", helper_method: :delimited_link_to_facet
 
 # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
