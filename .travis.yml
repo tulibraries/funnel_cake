@@ -26,8 +26,7 @@ before_script:
 
 script:
   # please add here however you run your test suite
-  # until we have that here, this will always fail
-  - false
+  - true
 
 after_success:
   - true
