@@ -73,5 +73,5 @@ gem 'popper_js'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 gem 'jquery-rails'
 gem 'auto-linker'
-
 gem "funnel_cake_index", github: "tulibraries/funnel_cake_index"
+gem 'dotenv-rails'
