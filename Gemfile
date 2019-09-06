@@ -74,4 +74,4 @@ gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 gem 'jquery-rails'
 gem 'auto-linker'
 
-gem "funnel_cake_index", github: "tulibraries/funnel_cake_index", branch: "FUNCAKE-104a-Missing_dependencies"
+gem "funnel_cake_index", github: "tulibraries/funnel_cake_index"
