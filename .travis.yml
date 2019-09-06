@@ -13,6 +13,7 @@ before_install:
   - gem install bundler
 
 before_script:
+  - cp config/funnel_cake.yml.example config/funnel_cake.yml
   - psql -c "create role funcake with createdb login password 'password';" -U postgres
   - RAILS_ENV=test bundle exec rake db:setup
   - RAILS_ENV=test bundle exec rake db:seed
