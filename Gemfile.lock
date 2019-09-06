@@ -1,11 +1,11 @@
 GIT
   remote: https://github.com/tulibraries/funnel_cake_index.git
-  revision: fdb689af09bd579d1f20346fe7e5ebf8b4be56d0
-  branch: FUNCAKE-104a-Missing_dependencies
+  revision: 64a986688c2c9cc1d132ad8939477dbd18bbc5fc
   specs:
     funnel_cake_index (0.0.1)
       gli (~> 2.18)
       library_stdnums (~> 1.6)
+      rsolr (~> 2.2)
       traject (~> 3.1)
 
 GEM
@@ -356,8 +356,8 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
-  funnel_cake_index!
   dotenv-rails
+  funnel_cake_index!
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
