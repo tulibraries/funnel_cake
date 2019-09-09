@@ -1,0 +1,6 @@
+development:
+  about_url: "http://padigital.org/about/about-aggregator/"
+test:
+  about_url: "http://padigital.org/about/about-aggregator/"
+production:
+  about_url: "http://padigital.org/about/about-aggregator/"
