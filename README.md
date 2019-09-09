@@ -43,13 +43,13 @@ Finally, we need to create a postgres role with enough privileges to create and 
 ##### OSX
 
 ```bash
-$ createuser -dW manifold
+$ createuser -dW funnelcake
 Password: #now enter your password
 ```
 
 ##### Ubuntu
 On ubunutu, we need to run commands as the postgres users
 ```bash
-$ sudo su -c "createuser -dW manifold" postgres
+$ sudo su -c "createuser -dW funnelcake" postgres
 Password: #now enter your password
 ```
