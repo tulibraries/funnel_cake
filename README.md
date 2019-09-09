@@ -1,51 +1,55 @@
-# README
+Funnel Cake
+---------
+A blacklight application to work with PA Digital aggregated resources.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Getting set up for local development
+---------
 
-* Ruby version
+TODO
 
-* System dependencies
+### Setting up Postgres on your local machine
 
-* Configuration
+You'll need a running Postgres >= 9.5 on your local dev machine.
 
-* Database creation
+#### Installing on OSX
 
-To create the Blacklight Ruby on Rails application database, issue the command:
+Install with homebrew
 
-    bundle exec rails db:migrate
+```bash
+brew install postgres
+```
 
-To create the Solr database, issue the command:
+Next, set up postgres to run as a service
 
-    bundle exec rails solr:install
+```bash
+brew services start postgres
+```
 
-And start Solr
+#### Installing on Ubuntu
 
-    solr_wrapper &
+Install with postgres and development library via apt
+```bash
+sudo apt-get install postgresql-server libpq-dev
+```
 
-* Database initialization
+`apt-get` should set up postgres as a service.
 
-Download the combine xml data with wget, and rename it to something more readable.
 
-    wget --output-document=combine_data.xml http://66.228.32.56/combine/oai?verb=ListRecords&set=test_publish_1
 
-Under the hood, that command uses [traject](https://github.com/traject/traject), with hard coded defaults. If you need to override a default to ingest your data, You can call traject directly:
+#### Create a postgres user
+Finally, we need to create a postgres role with enough privileges to create and destroy databases. We'll use the built in `createuser` command with the `-d` flag that allows the user to create and destroy databases, and the `-W` flag that will cause the command to prompt your for a password, which is just `password`.
 
-    bundle exec traject -i xml -c combine_indexer.rb [path/to/combine_data.xml]
+##### OSX
 
-* How to run the test suite
+```bash
+$ createuser -dW funnelcake
+Password: #now enter your password
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-To start Blacklight, start a rails server
-
-    bundle exec rails server
-
-In a web browser visit http://localhost:8983 to access the Solr web interface
-or http://localhost:3000 to access the Blacklight application
-
-* Deployment instructions
-
-* ...
+##### Ubuntu
+On ubunutu, we need to run commands as the postgres users
+```bash
+$ sudo su -c "createuser -dW funnelcake" postgres
+Password: #now enter your password
+```

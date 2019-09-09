@@ -36,7 +36,6 @@ gem "jbuilder", "~> 2.5"
 gem "bootsnap", ">= 1.1.0", require: false
 
 gem "blacklight"
-gem "traject"
 
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
@@ -74,3 +73,6 @@ gem 'popper_js'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 gem 'jquery-rails'
 gem 'auto-linker'
+gem "funnel_cake_index", github: "tulibraries/funnel_cake_index"
+gem 'dotenv-rails'
+gem 'pg'
