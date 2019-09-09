@@ -30,6 +30,3 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-
-# Ignore site specific files
-/config/funnel_cake.yml
