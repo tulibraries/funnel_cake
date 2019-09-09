@@ -13,13 +13,11 @@ before_install:
   - gem install bundler
 
 before_script:
-  - psql -c "create role funcake with createdb login password 'password';" -U postgres
+  - psql -c "create role funnelcake with createdb login password 'password';" -U postgres
   - RAILS_ENV=test bundle exec rake db:setup
   - RAILS_ENV=test bundle exec rake db:seed
   - RAILS_ENV=test bundle exec rake db:migrate
-  - nvm install node
-  - npm install -g ajv
-  - npm install -g ajv-cli
+
 
 script:
   # please add here however you run your test suite
