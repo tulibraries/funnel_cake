@@ -151,6 +151,7 @@ class CatalogController < ApplicationController
     config.add_show_field  "intermediateProvider_ssim", label: "Intermediate Provider", link_to_facet: true, separator_options: facet_separator_options
     config.add_show_field  "preview_ssim", label: "Preview", helper_method: :autolinker
     config.add_show_field  "provider_ssim", label: "Provider", link_to_facet: true, separator_options: facet_separator_options
+    config.add_show_field  "contributingInstitution_ssim", label: "Contributing Institution", link_to_facet: true
 
 # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
