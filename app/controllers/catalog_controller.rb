@@ -89,12 +89,10 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-    config.add_index_field "id", label: "ID"
-    config.add_index_field "creator_ssim", label: "Creator"
-    config.add_index_field "format_ssim", label: "Format"
-    config.add_index_field "language_ssim", label: "Language"
-    config.add_index_field "date_ssim", label: "Published"
-    config.add_index_field "description_tsim", label: "Description"
+    config.add_index_field "type_ssim", label: "Type"
+    config.add_index_field "contributingInstitution_ssim", label: "Contributing Institution"
+    config.add_index_field "intermediateProvider_ssim", label: "Intermediate Provider"
+    config.add_index_field "collection_ssim", label: "Collection"
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
@@ -102,56 +100,33 @@ class CatalogController < ApplicationController
     config.add_show_field "title_ssim", label: "Title", helper_method: :autolinker, separator_options: facet_separator_options 
     config.add_show_field "alternativeTitle_ssim", label: "Alternative Title", helper_method: :autolinker, separator_options: facet_separator_options
     config.add_show_field "creator_ssim", label: "Creator", link_to_facet: true, separator_options: facet_separator_options
-
     config.add_show_field "contributor_ssim", label: "Contributor", link_to_facet: true, separator_options: facet_separator_options
     config.add_show_field "subject_ssim", label: "Subject", link_to_facet: true, separator_options: facet_separator_options
     config.add_show_field "spatial_ssim", label: "Place", link_to_facet: true, separator_options: facet_separator_options
-
     config.add_show_field "temporalCoverage_ssim", label: "Temporal Coverage", link_to_facet: true, separator_options: facet_separator_options
-
     config.add_show_field "type_ssim", label: "Type", link_to_facet: true, separator_options: facet_separator_options
-
     config.add_show_field "format_ssim", label: "Format", link_to_facet: true, separator_options: facet_separator_options
-
     config.add_show_field "language_ssim", label: "Language", link_to_facet: true, separator_options: facet_separator_options
-
     config.add_show_field "date_ssim", label: "Date", link_to_facet: true, separator_options: facet_separator_options
-
     config.add_show_field "description_tsim", label: "Description", helper_method: :autolinker
     config.add_show_field "extent_ssim", label: "Extent", link_to_facet: true, separator_options: facet_separator_options
-
     config.add_show_field "publisher_ssim", label: "Publisher", link_to_facet: true, separator_options: facet_separator_options
-
     config.add_show_field "relation_ssim", label: "Relation", link_to_facet: true
-
     config.add_show_field "replacedBy_ssim", label: "Replaced By", link_to_facet: true, separator_options: facet_separator_options
-
     config.add_show_field "replaces_ssim", label: "Replaces", link_to_facet: true, separator_options: facet_separator_options
-
     config.add_show_field "rightsHolder_ssim", label: "Rights Holder", link_to_facet: true, separator_options: facet_separator_options
-
     config.add_show_field "source_ssim", label: "Source", link_to_facet: true, separator_options: facet_separator_options
-
     config.add_show_field 'id', label: "Identifier"
-
     config.add_show_field "fileFormat_ssim",  label: "File Format", link_to_facet: true, separator_options: facet_separator_options
-
     config.add_show_field "rights_ssim",  label: "Rights", link_to_facet: true
     config.add_show_field "rightsUri_tsim",  label: "Rights Link", helper_method: :autolinker, separator_options: facet_separator_options
-
-    config.add_show_field "collection_ssim", label: "Collection", link_to_facet: true, separator_options: facet_separator_options
-
-    config.add_show_field "genre_ssim", label: "Genre", link_to_facet: true, separator_options: facet_separator_options
-
     config.add_show_field "iiifManifest_ssim",  label: "IIIF Manifest", helper_method: :autolinker, separator_options: facet_separator_options
     config.add_show_field "iiifBaseUrl_ssim",  label: "IIIF Base URL", helper_method: :autolinker, separator_options: facet_separator_options
-
-    config.add_show_field  "contributingInstitution_tsim", label: "Contributing Institution", helper_method: :autolinker, separator_options: facet_separator_options
-    config.add_show_field  "url_ssim", label: "URL", helper_method: :autolinker, separator_options: facet_separator_options
-    config.add_show_field  "intermediateProvider_ssim", label: "Intermediate Provider", link_to_facet: true, separator_options: facet_separator_options
-    config.add_show_field  "preview_ssim", label: "Preview", helper_method: :autolinker
-    config.add_show_field  "provider_ssim", label: "Provider", link_to_facet: true, separator_options: facet_separator_options
-    config.add_show_field  "contributingInstitution_ssim", label: "Contributing Institution", link_to_facet: true
+    config.add_show_field "collection_ssim", label: "Collection", link_to_facet: true, separator_options: facet_separator_options
+    config.add_show_field "contributingInstitution_ssim", label: "Contributing Institution", link_to_facet: true
+    config.add_show_field "intermediateProvider_ssim", label: "Intermediate Provider", link_to_facet: true, separator_options: facet_separator_options
+    config.add_show_field "url_ssim", label: "URL", helper_method: :autolinker, separator_options: facet_separator_options
+    config.add_show_field "preview_ssim", label: "Preview", helper_method: :autolinker
 
 # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
