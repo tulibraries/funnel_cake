@@ -77,10 +77,25 @@ class CatalogController < ApplicationController
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
-    config.add_facet_field "format_ssim", label: "Format"
-    config.add_facet_field "date_ssim", label: "Publication Year", single: true
-    config.add_facet_field "subject_ssim", label: "Topic", limit: 20, index_range: "A".."Z"
-    config.add_facet_field "language_ssim", label: "Language", limit: true
+    config.add_facet_field "subject_ssim", label: "Subject", limit: 7, collapse: false
+    config.add_facet_field "type_ssim", label: "Type", limit: 5
+    config.add_facet_field "temporalCoverage_ssim", label: "Temporal Coverage", limit: 5
+    config.add_facet_field "spatial_ssim", label: "Spatial Relation", limit: 5
+    config.add_facet_field "format_ssim", label: "Format", limit: 5
+    config.add_facet_field "contributingInstitution_ssim", label: "Contributing Institution", limit: 5
+    config.add_facet_field "intermediateProvider_ssim", label: "Intermediate Provider", limit: 5
+    config.add_facet_field "collection_ssim", label: "Collection Name", limit: 5
+    config.add_facet_field "language_ssim", label: "Language", limit: 5
+    config.add_facet_field "publisher_ssim", label: "Publisher", limit: 5
+    config.add_facet_field "creator_ssim", label: "Creator", limit: 5
+    config.add_facet_field "contributor_ssim", label: "Contributor", limit: 5
+    config.add_facet_field "date_ssim", label: "Date", limit: 5
+    config.add_facet_field "identifier_ssim", label: "Identifier", limit: 5
+    config.add_facet_field "source_ssim", label: "Source", limit: 5
+    config.add_facet_field "relation_ssim", label: "Relation", limit: 5
+    config.add_facet_field "coverage_ssim", label: "Coverage", limit: 5
+    config.add_facet_field "rights_ssim", label: "Rights", limit: 5
+    config.add_facet_field "title_ssim", label: "Title", limit: 5
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
