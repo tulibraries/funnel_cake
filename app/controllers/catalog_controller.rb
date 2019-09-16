@@ -116,12 +116,10 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-    config.add_index_field "id", label: "ID"
-    config.add_index_field "creator_ssim", label: "Creator"
-    config.add_index_field "format_ssim", label: "Format"
-    config.add_index_field "language_ssim", label: "Language"
-    config.add_index_field "date_ssim", label: "Published"
-    config.add_index_field "description_tsim", label: "Description"
+    config.add_index_field "type_ssim", label: "Type"
+    config.add_index_field "contributingInstitution_ssim", label: "Contributing Institution"
+    config.add_index_field "intermediateProvider_ssim", label: "Intermediate Provider"
+    config.add_index_field "collection_ssim", label: "Collection"
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
@@ -155,6 +153,7 @@ class CatalogController < ApplicationController
     config.add_show_field "iiifBaseUrl_ssim",  label: "IIIF Base URL", helper_method: :autolinker, separator_options: facet_separator_options
     config.add_show_field "collection_ssim", label: "Collection", link_to_facet: true, separator_options: facet_separator_options
     config.add_show_field "contributingInstitution_ssim", label: "Contributing Institution", helper_method: :autolinker, separator_options: facet_separator_options
+
     config.add_show_field "intermediateProvider_ssim", label: "Intermediate Provider", link_to_facet: true, separator_options: facet_separator_options
     config.add_show_field "url_ssim", label: "URL", helper_method: :autolinker, separator_options: facet_separator_options
     config.add_show_field "preview_ssim", label: "Preview", helper_method: :autolinker
