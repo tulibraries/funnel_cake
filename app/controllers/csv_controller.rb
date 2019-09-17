@@ -6,7 +6,8 @@ class CsvController < CatalogController
   def index
 
     params[:per_page] = 100
-    (@response, @document_list) = search_results(params)
+    @search_state = search_state_class.new(params, blacklight_config, self)
+    (@response, @document_list) = search_service.search_results
     @rows = @response[:responseHeader][:params][:rows]
     @start = @response[:response][:start]
     @num_return = @response[:response][:numFound]
@@ -25,20 +26,27 @@ class CsvController < CatalogController
   end
 
   def render_search_results_as_csv
-    show_fields = blacklight_config.show_fields.map {|solr_name, show_field| {:solr_name => solr_name, :label => show_field.label } }
-
+    show_fields = blacklight_config.show_fields.map {|solr_name, show_field| {solr_name: solr_name, label: show_field.label } }
     csv_result = CSV.generate(headers: true) do |csv|
       csv << show_fields.map { |field| field[:label] }
       page = 1
       #Loop through all results, not just first page
       while (@start < @num_return )
         @document_list.each do |doc|
-          csv << show_fields.map { |field| doc.fetch(field[:solr_name], nil).to_a.join(" ; ") }
+          csv << show_fields.map { |field| Array(doc.fetch(field[:solr_name], nil)).join(" ; ") }
         end
         @start += @rows.to_i
         page += 1
-        (@response, @document_list) = search_results(params.merge({page: page})) if @start < @num_return
+        params[:page] = page
+        @search_state = search_state_class.new(params, blacklight_config, self)
+        (@response, @document_list) = search_service.search_results if @start < @num_return
       end
     end
+  end
+
+  private
+
+  def csv_params
+    params.permit!
   end
 end
