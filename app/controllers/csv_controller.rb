@@ -43,10 +43,4 @@ class CsvController < CatalogController
       end
     end
   end
-
-  private
-
-  def csv_params
-    params.permit!
-  end
 end
