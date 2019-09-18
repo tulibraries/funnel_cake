@@ -1,0 +1,9 @@
+<span class="sr-only"> Export as CSV </span>
+<div id="per_page-dropdown" class="per-page-dropdown btn-group">
+  <button type="button" class="btn btn-outine-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    Export as <span class="caret"></span>
+  </button>
+  <div class="dropdown-menu dropdown-menu-right" role="menu">
+    <%= link_to('csv', csv_path(params.merge(format: "csv")), data: {turbolinks: false}, class: 'dropdown-item') %>
+  </div>
+</div>

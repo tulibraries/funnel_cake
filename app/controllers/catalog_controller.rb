@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 class CatalogController < ApplicationController
 
+  before_action(:catalog_params, only: :index)
   include Blacklight::Catalog
 
   configure_blacklight do |config|
@@ -125,7 +126,7 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     facet_separator_options = { words_connector: "; ", two_words_connector: "; ", last_word_connector: "; " }
     config.add_show_field "title_tsim", label: "Title", helper_method: :autolinker, separator_options: facet_separator_options 
-    config.add_show_field "alternativeTitle_ssim", label: "Alternative Title", helper_method: :autolinker, separator_options: facet_separator_options
+    config.add_show_field "alternativeTitle_tsim", label: "Alternative Title", helper_method: :autolinker, separator_options: facet_separator_options
     config.add_show_field "creator_ssim", label: "Creator", link_to_facet: true, separator_options: facet_separator_options
     config.add_show_field "contributor_ssim", label: "Contributor", link_to_facet: true, separator_options: facet_separator_options
     config.add_show_field "subject_ssim", label: "Subject", link_to_facet: true, separator_options: facet_separator_options
@@ -237,10 +238,10 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc, pub_date_si desc, title_si asc', label: 'relevance'
-    config.add_sort_field 'pub_date_si desc, title_si asc', label: 'year'
+    config.add_sort_field 'score desc, date_si desc, title_si asc', label: 'relevance'
+    config.add_sort_field 'date_si desc, title_si asc', label: 'year'
     config.add_sort_field 'creator_si asc, title_si asc', label: 'creator'
-    config.add_sort_field 'title_si asc, pub_date_si desc', label: 'title'
+    config.add_sort_field 'title_si asc, date_si desc', label: 'title'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
@@ -252,5 +253,11 @@ class CatalogController < ApplicationController
     # if the name of the solr.SuggestComponent provided in your solrcongig.xml is not the
     # default 'mySuggester', uncomment and provide it below
     # config.autocomplete_suggester = 'mySuggester'
+  end
+
+  private
+
+  def catalog_params
+    params.permit!
   end
 end
