@@ -87,7 +87,7 @@ class CatalogController < ApplicationController
     config.add_facet_field "iiifBaseUrl_ssim", label: "IIIF Base URL", limit: 5
     config.add_facet_field "title_tsim", label: "Title", limit: 5
     config.add_facet_field "subject_ssim", label: "Subject", limit: 7
-    config.add_facet_field "spatial_ssim", label: "Spatial Relation", limit: 5
+    config.add_facet_field "spatial_ssim", label: "Place", limit: 5
     config.add_facet_field "coverage_ssim", label: "Coverage", limit: 5
     config.add_facet_field "temporalCoverage_ssim", label: "Temporal Coverage", limit: 5
     config.add_facet_field "type_ssim", label: "Type", limit: 5
