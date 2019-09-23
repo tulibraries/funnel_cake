@@ -76,3 +76,4 @@ gem 'auto-linker'
 gem "funnel_cake_index", github: "tulibraries/funnel_cake_index"
 gem 'dotenv-rails'
 gem 'pg'
+gem "okcomputer"
