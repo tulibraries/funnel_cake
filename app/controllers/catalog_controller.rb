@@ -149,7 +149,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'id', label: "Identifier", link_to_facet: true
     config.add_show_field "fileFormat_ssim",  label: "File Format", link_to_facet: true, separator_options: facet_separator_options
     config.add_show_field "rights_ssim",  label: "Rights", link_to_facet: true
-    config.add_show_field "rightsUri_ssim",  label: "Rights Link", helper_method: :autolinker, separator_options: facet_separator_options
+    config.add_show_field "rightsUri_ssim",  label: "Rights URI", helper_method: :autolinker, separator_options: facet_separator_options
     config.add_show_field "iiifManifest_ssim",  label: "IIIF Manifest", helper_method: :autolinker, separator_options: facet_separator_options
     config.add_show_field "iiifBaseUrl_ssim",  label: "IIIF Base URL", helper_method: :autolinker, separator_options: facet_separator_options
     config.add_show_field "collection_ssim", label: "Collection", link_to_facet: true, separator_options: facet_separator_options
@@ -227,7 +227,7 @@ class CatalogController < ApplicationController
       }
     end
 
-    config.add_search_field('rightsUri', label: "Rights URL") do |field|
+    config.add_search_field('rightsUri', label: "Rights URI") do |field|
       field.solr_parameters = {
         qf: '${rightsUri_qf}',
         pf: '${rightsUri_pf}'
