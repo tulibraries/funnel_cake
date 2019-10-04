@@ -4,13 +4,15 @@ Rails.application.routes.draw do
   root to: "catalog#index"
   concern :searchable, Blacklight::Routes::Searchable.new
 
-  resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
-    concerns :searchable
-  end
-  concern :exportable, Blacklight::Routes::Exportable.new
+  scope format: false, constraints: { id: /.+/ } do
+    resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
+      concerns :searchable
+    end
+    concern :exportable, Blacklight::Routes::Exportable.new
 
-  resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
-    concerns :exportable
+    resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
+      concerns :exportable
+    end
   end
 
   resources :bookmarks do
