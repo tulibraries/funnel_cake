@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-class OaiController < ApplicationController
 
+class OaiController < ApplicationController
   include Blacklight::Catalog
   include BlacklightOaiProvider::Controller
 
@@ -24,18 +24,12 @@ class OaiController < ApplicationController
     }
     config.default_document_solr_params = {
       qt: 'search',
-      fl: %w[
-        *
-        payload_ss:xml
-        ],
+      fl: '*',
       rows: 1,
       q: '{!raw f=id v=$id}'
     }
-    config.connection_config =  config.connection_config.dup
+    config.connection_config = config.connection_config.dup
     config.connection_config[:url] = config.connection_config[:funcake_oai_url]
     config.document_model = OaiDocument
-
   end
-
-
 end
