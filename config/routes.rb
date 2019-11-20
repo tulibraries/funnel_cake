@@ -2,7 +2,12 @@ Rails.application.routes.draw do
 
   mount Blacklight::Engine => '/'
   root to: "catalog#index"
+
   concern :searchable, Blacklight::Routes::Searchable.new
+  concern :oai_provider, BlacklightOaiProvider::Routes.new
+
+  get :oai, to: 'oai#oai'
+
 
   scope format: false, constraints: { id: /.+/ } do
     resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do

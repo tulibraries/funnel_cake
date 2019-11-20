@@ -1,6 +1,7 @@
 development:
   adapter: solr
   url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/blacklight-core-dev" %>
+  funcake_oai_url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8090/solr/funcake-oai" %>
 test: &test
   adapter: solr
   url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/blacklight-core-test" %>
