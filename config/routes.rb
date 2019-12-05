@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   root to: "catalog#index"
 
   concern :searchable, Blacklight::Routes::Searchable.new
-  concern :oai_provider, BlacklightOaiProvider::Routes.new
 
-  get :oai, to: 'oai#oai'
+  get :oai, to: 'dpla_oai#oai'
+  get :oai_dev, to: 'internal_oai#oai'
 
 
   scope format: false, constraints: { id: /.+/ } do

@@ -6,4 +6,5 @@ class OaiDocument
   def export_as_oai_dc_xml
     self["payload_ss"]
   end
+
 end
