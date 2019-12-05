@@ -1,9 +1,16 @@
 development:
   adapter: solr
   url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/blacklight-core-dev" %>
+  funcake_oai_prod_solr_url: <%= ENV['FUNCAKE_OAI_PROD_SOLR_URL'] || "http://127.0.0.1:8090/solr/funcake-oai-0-dev" %>
+  funcake_oai_dev_solr_url: <%= ENV['FUNCAKE_OAI_DEV_SOLR_URL'] || "http://127.0.0.1:8090/solr/funcake-oai-0-prod" %>
+
 test: &test
   adapter: solr
   url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/blacklight-core-test" %>
+  funcake_oai_prod_solr_url: <%= ENV['FUNCAKE_OAI_PROD_SOLR_URL'] || "http://127.0.0.1:8090/solr/funcake-oai-0-dev" %>
+  funcake_oai_dev_solr_url: <%= ENV['FUNCAKE_OAI_DEV_SOLR_URL'] || "http://127.0.0.1:8090/solr/funcake-oai-0-prod" %>
 production:
   adapter: solr
   url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/blacklight-core" %>
+  funcake_oai_prod_solr_url: <%= ENV['FUNCAKE_OAI_PROD_SOLR_URL'] || "http://127.0.0.1:8090/solr/funcake-oai-0-dev" %>
+  funcake_oai_dev_solr_url: <%= ENV['FUNCAKE_OAI_DEV_SOLR_URL'] || "http://127.0.0.1:8090/solr/funcake-oai-0-prod" %>
