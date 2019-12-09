@@ -1,13 +1,13 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.5.1"
+ruby "2.6.5"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem "rails", "~> 5.2.2"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.3.6"
-gem "puma", "~> 3.11"
+gem "puma", "~> 3.12"
 # Use SCSS for stylesheets
 gem "sass-rails", "~> 5.0"
 # Use Uglifier as compressor for JavaScript assets
@@ -77,3 +77,5 @@ gem "funnel_cake_index", github: "tulibraries/funnel_cake_index"
 gem 'dotenv-rails'
 gem 'pg'
 gem "okcomputer"
+gem "blacklight_oai_provider", github: "projectblacklight/blacklight_oai_provider"
+gem "fieldhand"
