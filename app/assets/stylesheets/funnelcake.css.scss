@@ -1,0 +1,22 @@
+$link-color: #051D49;
+$search-button-color: #051D49;
+$facet-color: #9c27b0;
+
+.document-title-heading a{
+	color: $link-color;
+}
+
+.search-query-form button{
+	background-color: $search-button-color;
+}
+
+.facet-limit-active {
+  .card-header{
+    background-color: #F7F7F7 !important;
+  }
+  border: 1px solid #DDD !important;
+  .text-success, .facet-values li .selected{
+    color: $link-color !important;
+  }
+}
+
