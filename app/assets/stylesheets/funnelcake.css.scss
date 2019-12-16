@@ -1,13 +1,33 @@
 $link-color: #051D49;
-$search-button-color: #051D49;
 $facet-color: #9c27b0;
 
 .document-title-heading a{
 	color: $link-color;
 }
 
+a, a:hover{
+	color: $link-color;
+}
+
+a.btn{
+	background-color: $link-color;
+}
+
+a.btn:hover{
+	background-color: $link-color !important;
+	border-color: $link-color !important;
+}
+
 .search-query-form button{
-	background-color: $search-button-color;
+	background-color: $link-color;
+  .btn-primary.search-btn{
+    background-color: $link-color !important;
+  }
+}
+
+button#search{
+  background-color: $link-color;
+  border-color: $link-color;
 }
 
 .facet-limit-active {
