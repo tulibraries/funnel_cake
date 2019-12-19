@@ -1,0 +1,59 @@
+$link-color: #051D49;
+$facet-color: #9c27b0;
+$selected-item-background: #6c757d; 
+$selected-item-color: white; 
+
+.document-title-heading a{
+	color: $link-color;
+}
+
+a, a:hover{
+	color: $link-color;
+}
+
+#appliedParams .btn-outline-secondary{
+  background-color: $selected-item-background;
+  color: $selected-item-color;
+}
+
+a.btn, a.btn:hover{
+	background-color: $link-color !important;
+	border-color: $link-color !important;
+}
+
+span.constraint-value.btn.btn-online-secondary.btn-disabled:hover{
+  background-color: $link-color;
+}
+
+nav.pagination{
+  a, a:hover{
+    color: $link-color;
+  }
+  li.page-item.active span.page-link{
+    background-color: $link-color;
+    border-color: $link-color;
+  }
+}
+
+.search-query-form button{
+	background-color: $link-color;
+  .btn-primary.search-btn{
+    background-color: $link-color !important;
+  }
+}
+
+button#search{
+  background-color: $link-color;
+  border-color: $link-color;
+}
+
+.facet-limit-active {
+  .card-header{
+    background-color: #F7F7F7 !important;
+  }
+  border: 1px solid #DDD !important;
+  .text-success, .facet-values li .selected{
+    color: $link-color !important;
+  }
+}
+
