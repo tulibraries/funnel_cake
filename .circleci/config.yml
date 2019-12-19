@@ -41,13 +41,8 @@ jobs:
             sudo bundle install
             RAILS_ENV=test sudo bundle exec rake db:setup
             RAILS_ENV=test sudo bundle exec rake db:seed
-            RAILS_ENV=test bundle exec rake db:migrate
-            SECRET_KEY_BASE=foo RAILS_ENV=production bundle exec rails assets:precompile
-            sudo npm install -g ajv
-            sudo npm install -g ajv-cli
-            sudo bundle exec rubocop
-            sudo bundle exec brakeman --no-pager
-            sudo bundle exec rspec spec
+            RAILS_ENV=test sudo bundle exec rake db:migrate
+            SECRET_KEY_BASE=foo RAILS_ENV=test sudo bundle exec rails assets:precompile
   dev_deploy:
     docker:
       - image: circleci/python:3.7.2
