@@ -19,7 +19,7 @@ class InternalOaiController < ApplicationController
         set_fields: [
           { label: 'Set', solr_field: 'set_ssim' }
         ],
-        limit: 25
+        limit: 1000
       }
     }
     config.default_document_solr_params = {
