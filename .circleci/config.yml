@@ -59,7 +59,7 @@ jobs:
 
   prod_deploy:
     docker:
-      - image: circleci/python:3.6.6
+      - image: circleci/python:3.7.2
         environment:
           PIPENV_VENV_IN_PROJECT: true
     steps:
