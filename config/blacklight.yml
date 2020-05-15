@@ -6,9 +6,9 @@ development:
 
 test: &test
   adapter: solr
-  url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/blacklight-core-test" %>
-  funcake_oai_prod_solr_url: <%= ENV['FUNCAKE_OAI_PROD_SOLR_URL'] || "http://127.0.0.1:8090/solr/funcake-oai-2-dev" %>
-  funcake_oai_dev_solr_url: <%= ENV['FUNCAKE_OAI_DEV_SOLR_URL'] || "http://127.0.0.1:8090/solr/funcake-oai-2-prod" %>
+  url: "http://127.0.0.1:8983/solr/blacklight-core-test"
+  funcake_oai_prod_solr_url:  "http://127.0.0.1:8090/solr/funcake-oai-2-dev"
+  funcake_oai_dev_solr_url:  "http://127.0.0.1:8090/solr/funcake-oai-2-prod"
 production:
   adapter: solr
   url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/blacklight-core" %>
