@@ -3,7 +3,7 @@ set -e
 
 cd ..
 # clone deployment playbook
-git clone --single-branch --branch master git@github.com:tulibraries/ansible-playbook-funcake.git funcake-prod
+git clone --single-branch --branch main git@github.com:tulibraries/ansible-playbook-funcake.git funcake-prod
 cd funcake-prod
 # install playbook requirements
 sudo pip install pipenv
