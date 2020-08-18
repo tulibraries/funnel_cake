@@ -32,4 +32,13 @@ class DplaOaiController < ApplicationController
     config.connection_config[:url] = config.connection_config[:funcake_oai_prod_solr_url]
     config.document_model = OaiDocument
   end
+
+  # Overrides BlacklightOaiProvider::Controller.oai
+  #
+  # Overridden to remove hard coded styling.
+  # @see https://github.com/projectblacklight/blacklight_oai_provider/issues/21
+  def oai
+    body = oai_provider.process_request(oai_params.to_h)
+    render xml: body, content_type: 'text/xml'
+  end
 end
