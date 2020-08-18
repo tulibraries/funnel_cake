@@ -1,7 +1,7 @@
 $link-color: #051D49;
 $facet-color: #9c27b0;
-$selected-item-background: #6c757d; 
-$selected-item-color: white; 
+$selected-item-background: #6c757d;
+$selected-item-color: white;
 
 .document-title-heading a{
 	color: $link-color;
@@ -57,3 +57,32 @@ button#search{
   }
 }
 
+.prev_next_links a.btn,
+.prev_next_links a:hover {
+	background-color: white !important;
+	border: none;
+	color: $link-color;
+}
+
+div.sort-options {
+	a.sort_change,
+	a.short_change:hover {
+		background-color: white !important;
+		color: #051D49;
+	}
+
+	span.active {
+	background-color: #051D49 !important;
+	color: white;
+	}
+}
+
+span.constraint-value {
+	background-color: white !important;
+	color: black !important;
+}
+
+span.constraint .remove {
+	background-color: white !important;
+	color: black !important;
+}
