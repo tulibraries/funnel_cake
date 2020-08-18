@@ -1,7 +1,7 @@
 $link-color: #051D49;
 $facet-color: #9c27b0;
-$selected-item-background: #6c757d; 
-$selected-item-color: white; 
+$selected-item-background: #6c757d;
+$selected-item-color: white;
 
 .document-title-heading a{
 	color: $link-color;
@@ -57,3 +57,6 @@ button#search{
   }
 }
 
+.page-sidebar .show-thumbnail {
+	margin-top: 150px;
+}
