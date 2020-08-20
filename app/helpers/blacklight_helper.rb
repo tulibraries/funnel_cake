@@ -14,10 +14,10 @@ module BlacklightHelper
 	 end
 
   def sidebar_classes
-    'page-sidebar col-lg-4'
+    'page-sidebar col-md-4'
   end
 
   def main_content_classes
-    'col-lg-8'
+    'col-md-8'
   end
 end
