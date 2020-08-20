@@ -58,7 +58,13 @@ button#search{
 }
 
 .page-sidebar .show-thumbnail {
-	margin-top: 150px;
+	margin-top: 100px;
+
+	@media(max-width: 768px) {
+		margin-top: 0;
+		margin-left: 50px;
+	}
+
 }
 
 .prev_next_links a.btn,
@@ -89,4 +95,17 @@ span.constraint-value {
 span.constraint .remove {
 	background-color: white !important;
 	color: black !important;
+}
+
+.blacklight-catalog-index dt {
+	flex: 0 0 50% !important;
+	max-width: 50% !important;
+
+	@media(min-width: 485px) {
+		margin-left: -50px !important;
+  }
+}
+
+.blacklight-catalog-index dd {
+	flex: 0 0 50% !important;
 }
