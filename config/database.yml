@@ -8,7 +8,10 @@ default: &default
 
 development:
   <<: *default
+  adapter: sqlite3
   database: funnelcake_development
+  pool: 5
+  timeout: 5000
 
 test:
   <<: *default
