@@ -89,8 +89,8 @@ class CatalogController < ApplicationController
     config.add_facet_field "subject_ssim", label: "Subject", limit: 7
     config.add_facet_field "spatial_ssim", label: "Place", limit: 5
     config.add_facet_field "coverage_ssim", label: "Coverage", limit: 5
-    config.add_facet_field "temporalCoverage_ssim", label: "Temporal Coverage", limit: 5
-    config.add_facet_field "type_ssim", label: "Type", limit: 5
+    config.add_facet_field "temporalCoverage_ssim", label: "Temporal Coverage"
+    config.add_facet_field "type_ssim", label: "Type", limit: 5, solr_params: { "facet.missing" => true }
     config.add_facet_field "genre_ssim", label: "Genre", limit: 5
     config.add_facet_field "format_ssim", label: "Format", limit: 5
     config.add_facet_field "creator_ssim", label: "Creator", limit: 5
