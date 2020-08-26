@@ -53,3 +53,48 @@ On ubunutu, we need to run commands as the postgres users
 $ sudo su -c "createuser -dW funnelcake" postgres
 Password: #now enter your password
 ```
+
+### Set up development environment
+
+#### Point the envirnoment to the desired Solr server
+
+```
+$ export SOLR_IP="<USERNAME>:<PASSWORD>@<SOLR_CLOUD_URL>
+$ cp .env-dev .env
+```
+
+#### Install gem dependencies
+
+```
+$ bundle install
+```
+
+#### Migrate databases
+
+```
+$ rails db:migrate
+```
+
+#### Start the Funnelcake Application Server
+
+```
+$ bundle exec rails server
+```
+
+#### To start up a local instance of solr cloud
+
+
+```
+$ cd ..
+$ git clone https://github.com/tulibraries/ansible-playbook-solrcloud.git
+$ cd ansible-playbook-solrcloud
+$ make up-lite
+```
+
+Set the SOLR_IP address before starting the Funnelcake server
+
+```
+export SOLR_IP="127.0.0.1:8090"
+```
+
+NOTE: The Funnelcake Solr repository should be seeded for the application to function properly

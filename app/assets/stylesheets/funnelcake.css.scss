@@ -1,7 +1,7 @@
 $link-color: #051D49;
 $facet-color: #9c27b0;
-$selected-item-background: #6c757d; 
-$selected-item-color: white; 
+$selected-item-background: #6c757d;
+$selected-item-color: white;
 
 .document-title-heading a{
 	color: $link-color;
@@ -57,3 +57,55 @@ button#search{
   }
 }
 
+.page-sidebar .show-thumbnail {
+	margin-top: 100px;
+
+	@media(max-width: 768px) {
+		margin-top: 0;
+		margin-left: 50px;
+	}
+
+}
+
+.prev_next_links a.btn,
+.prev_next_links a:hover {
+	background-color: white !important;
+	border: none;
+	color: $link-color;
+}
+
+div.sort-options {
+	a.sort_change,
+	a.short_change:hover {
+		background-color: white !important;
+		color: #051D49;
+	}
+
+	span.active {
+	background-color: #051D49 !important;
+	color: white;
+	}
+}
+
+span.constraint-value {
+	background-color: white !important;
+	color: black !important;
+}
+
+span.constraint .remove {
+	background-color: white !important;
+	color: black !important;
+}
+
+.blacklight-catalog-index dt {
+	flex: 0 0 50% !important;
+	max-width: 50% !important;
+
+	@media(min-width: 485px) {
+		margin-left: -50px !important;
+  }
+}
+
+.blacklight-catalog-index dd {
+	flex: 0 0 50% !important;
+}
