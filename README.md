@@ -2,6 +2,9 @@ Funnel Cake
 ---------
 A blacklight application to work with PA Digital aggregated resources.
 
+## system requirements
+
+- ruby 2.7.2
 
 Getting set up for local development
 ---------
