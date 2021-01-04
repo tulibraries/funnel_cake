@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -15,14 +17,14 @@ gem "puma", "~> 3.12"
 gem "sass-rails", "~> 5.0"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
-gem 'auto-linker'
-gem 'bootstrap', '~> 4.0'
-gem 'dotenv-rails'
-gem 'jquery-rails'
-gem 'pg'
-gem 'popper_js'
-gem 'rsolr', '>= 1.0', '< 3'
-gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
+gem "auto-linker"
+gem "bootstrap", "~> 4.0"
+gem "dotenv-rails"
+gem "jquery-rails"
+gem "pg"
+gem "popper_js"
+gem "rsolr", ">= 1.0", "< 3"
+gem "twitter-typeahead-rails", "0.11.1.pre.corejavascript"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
@@ -48,4 +50,3 @@ group :test do
   gem "webmock"
 
 end
-

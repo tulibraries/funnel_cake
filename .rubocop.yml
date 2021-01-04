@@ -138,3 +138,6 @@ Rails/OutputSafety:
 
 Rails/HttpPositionalArguments:
   Enabled: false
+
+Rails/LexicallyScopedActionFilter:
+  Enabled: false
