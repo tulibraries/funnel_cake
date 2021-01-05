@@ -44,6 +44,7 @@ jobs:
             RAILS_ENV=test sudo bundle exec rake db:seed
             RAILS_ENV=test sudo bundle exec rake db:migrate
             SECRET_KEY_BASE=foo RAILS_ENV=test sudo bundle exec rails assets:precompile
+            sudo rubocop
             RAILS_ENV=test sudo bundle exec rspec
   dev_deploy:
     docker:
