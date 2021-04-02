@@ -1,12 +1,4 @@
 GIT
-  remote: https://github.com/projectblacklight/blacklight_oai_provider.git
-  revision: 76b6a2ae6fc0068aa93a3035051fb333c4564795
-  specs:
-    blacklight_oai_provider (7.0.0)
-      blacklight (~> 7.0)
-      oai (~> 1.0)
-
-GIT
   remote: https://github.com/tulibraries/funnel_cake_index.git
   revision: 09ef38680d4e21996e731cc7492e458210307dd6
   specs:
@@ -15,6 +7,15 @@ GIT
       library_stdnums (~> 1.6)
       rsolr (~> 2.2)
       traject (~> 3.1)
+
+GIT
+  remote: https://github.com/ubiquitypress/blacklight_oai_provider.git
+  revision: 8821dadbcc861a988d14be5b053c7fc13a77ed31
+  branch: multi_tenant_improvements
+  specs:
+    blacklight_oai_provider (7.0.0)
+      blacklight (~> 7.0)
+      oai (~> 1.0)
 
 GEM
   remote: https://rubygems.org/

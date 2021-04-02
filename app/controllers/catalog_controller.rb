@@ -34,6 +34,8 @@ class CatalogController < ApplicationController
     #config.index.display_type_field = 'format'
     #config.index.thumbnail_field = 'thumbnail_path_ss'
     config.index.thumbnail_field = "preview_ssim"
+    config.index.document_presenter_class = ::FunnelCake::IndexPresenter
+    config.show.document_presenter_class = ::FunnelCake::ShowPresenter
 
     config.add_results_document_tool(:bookmark, partial: "bookmark_control", if: :render_bookmarks_control?)
 

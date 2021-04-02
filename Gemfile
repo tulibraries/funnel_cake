@@ -8,7 +8,8 @@ ruby "2.7.2"
 gem "rails", "~> 5.2.2"
 
 gem "blacklight"
-gem "blacklight_oai_provider", github: "projectblacklight/blacklight_oai_provider"
+#gem "blacklight_oai_provider", github: "projectblacklight/blacklight_oai_provider"
+gem "blacklight_oai_provider", github: "ubiquitypress/blacklight_oai_provider", branch: "multi_tenant_improvements"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "fieldhand"
 gem "funnel_cake_index", github: "tulibraries/funnel_cake_index"
