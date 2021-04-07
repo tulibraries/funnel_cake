@@ -34,6 +34,7 @@ group :development, :test do
   gem "sqlite3", "~> 1.4.2"
   gem "rubocop",  require: false
   gem "rubocop-rails", require: false
+  gem "vcr"
 end
 
 group :development do
