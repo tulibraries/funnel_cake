@@ -26,8 +26,10 @@ class InternalOaiController < ApplicationController
       qt: "search",
       fl: "*",
       rows: 1,
-      q: "{!raw f=id v=$id}"
+      facet: false,
     }
+    config.document_unique_id_param = "id"
+    config.document_solr_path = "select"
     config.connection_config = config.connection_config.dup
     config.connection_config[:url] = config.connection_config[:funcake_oai_dev_solr_url]
     config.document_model = OaiDocument
