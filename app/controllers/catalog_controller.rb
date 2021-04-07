@@ -88,6 +88,7 @@ class CatalogController < ApplicationController
     config.add_facet_field "preview_ssim", label: "Preview", limit: 5
     config.add_facet_field "iiifManifest_ssim", label: "IIIF Manifest", limit: 5
     config.add_facet_field "iiifBaseUrl_ssim", label: "IIIF Base URL", limit: 5
+    config.add_facet_field "mediaMaster_ssim", label: "Media Master", limit: 5
     config.add_facet_field "title_ssim", label: "Title", limit: 5
     config.add_facet_field "subject_ssim", label: "Subject", limit: 7
     config.add_facet_field "spatial_ssim", label: "Place", limit: 5
@@ -155,6 +156,7 @@ class CatalogController < ApplicationController
     config.add_show_field "rightsUri_ssim",  label: "Rights URI", helper_method: :autolinker, separator_options: facet_separator_options
     config.add_show_field "iiifManifest_ssim",  label: "IIIF Manifest", helper_method: :autolinker, separator_options: facet_separator_options
     config.add_show_field "iiifBaseUrl_ssim",  label: "IIIF Base URL", helper_method: :autolinker, separator_options: facet_separator_options
+    config.add_show_field "mediaMaster_ssim",  label: "Media Master", helper_method: :autolinker, separator_options: facet_separator_options
     config.add_show_field "collection_ssim", label: "Collection", link_to_facet: true, separator_options: facet_separator_options
     config.add_show_field "contributingInstitution_ssim", label: "Contributing Institution", link_to_facet: true, separator_options: facet_separator_options
 
