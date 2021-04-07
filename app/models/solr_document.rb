@@ -17,4 +17,15 @@ class SolrDocument
   # and Blacklight::Document::SemanticFields#to_semantic_values
   # Recommendation: Use field names from Dublin Core
   use_extension(Blacklight::Document::DublinCore)
+
+  def initialize(doc, req = nil)
+    # TODO:Remove if/when we do this at indexing time.
+    doc.keys.each do |field|
+      if [ "NULL", ["NULL"], "", [""]].include? doc[field]
+        doc[field] = nil
+      end
+    end
+
+    super
+  end
 end

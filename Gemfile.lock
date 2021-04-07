@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/projectblacklight/blacklight_oai_provider.git
-  revision: 76b6a2ae6fc0068aa93a3035051fb333c4564795
+  revision: 453e91d4df49414c2d01432413b4441dc1e2bcda
   specs:
     blacklight_oai_provider (7.0.0)
       blacklight (~> 7.0)
@@ -347,7 +347,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.7)
     unicode-display_width (2.0.0)
-    view_component (2.28.0)
+    view_component (2.30.0)
       activesupport (>= 5.0.0, < 7.0)
     web-console (3.7.0)
       actionview (>= 5.0)

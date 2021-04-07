@@ -4,6 +4,8 @@ class CatalogController < ApplicationController
   before_action(:catalog_params, only: :index)
   include Blacklight::Catalog
 
+  self.search_state_class = FunnelCake::SearchState
+
   configure_blacklight do |config|
     ## Class for sending and receiving requests from a search index
     # config.repository_class = Blacklight::Solr::Repository
@@ -19,6 +21,7 @@ class CatalogController < ApplicationController
 
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
+      "facet.missing": true,
       rows: 10
     }
 
