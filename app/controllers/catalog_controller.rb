@@ -81,6 +81,8 @@ class CatalogController < ApplicationController
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
+    config.facet_missing_label = "[MISSING]"
+
     config.add_facet_field "contributingInstitution_ssim", label: "Contributing Institution", limit: 5
     config.add_facet_field "intermediateProvider_ssim", label: "Intermediate Provider", limit: 5
     config.add_facet_field "collection_ssim", label: "Collection Name", limit: 5

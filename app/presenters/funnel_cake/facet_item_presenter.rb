@@ -2,15 +2,23 @@
 
 module FunnelCake
   class FacetItemPresenter < Blacklight::FacetItemPresenter
-    def missing_facet?
-      facet_field.match?(/^-.*:$/) ||
-        (facet_item.match?(/^-.*:$/) rescue false) ||
-        (facet_item.fq.match?(/^-.*:\[\* TO \*\]$/) rescue false)
+    def facet_missing?
+      facet_item.fq.match?(/^-.*:\[\* TO \*\]$/) rescue false
     end
 
-    # Overridden to handle missing_facet case.
+    def facet_missing_label
+      view_context.blacklight_config.facet_missing_label rescue "[MISSING]"
+    end
+
+    # Overridden to handle facet_missing label.
+    def label
+      return facet_missing_label if facet_missing?
+      super
+    end
+
+    # Overridden to handle facet_missing case.
     def selected?
-      if missing_facet?
+      if facet_missing?
         return false if search_state.params.dig("f", "-#{key}:").blank?
       end
       super
