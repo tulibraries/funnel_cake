@@ -34,4 +34,23 @@ RSpec.describe FunnelCake::FacetItemPresenter, type: :presenter do
       end
     end
   end
+
+  describe "#label" do
+    before :each do
+      allow(presenter).to receive(:facet_missing?) { true }
+    end
+
+    context "with facet missing" do
+      it "uses [MISSING] as label" do
+        expect(presenter.label).to eq("[MISSING]")
+      end
+    end
+
+    context "with config.facet_missing_label override" do
+      it "uses the configured facet.missing label" do
+        allow(config).to receive(:facet_missing_label) { "FOO" }
+        expect(presenter.label).to eq("FOO")
+      end
+    end
+  end
 end
