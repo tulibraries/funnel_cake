@@ -4,6 +4,8 @@ class InternalOaiController < ApplicationController
   include Blacklight::Catalog
   include BlacklightOaiProvider::Controller
 
+  self.search_service_class = FunnelCake::SearchService
+
   configure_blacklight do |config|
     config.oai = {
       repository_url: "/oai_dev",
