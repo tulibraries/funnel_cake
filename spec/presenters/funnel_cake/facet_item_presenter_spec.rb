@@ -19,7 +19,7 @@ RSpec.describe FunnelCake::FacetItemPresenter, type: :presenter do
     context "with missing facet field but no missing facet param" do
       let(:search_state) { FunnelCake::SearchState.new({}, config) }
       it "works" do
-        allow(presenter).to receive(:facet_missing?).and_return(true)
+        allow(presenter).to receive(:missing_facet?).and_return(true)
         allow(search_state).to receive(:has_facet?).and_return(true)
         expect(presenter.selected?).to be false
       end
@@ -28,28 +28,9 @@ RSpec.describe FunnelCake::FacetItemPresenter, type: :presenter do
     context "with missing facet field and missing facet param" do
       let(:search_state) { FunnelCake::SearchState.new({ f: { "-key:" => [""] } }, config) }
       it "works" do
-        allow(presenter).to receive(:facet_missing?).and_return(true)
+        allow(presenter).to receive(:missing_facet?).and_return(true)
         allow(search_state).to receive(:has_facet?).and_return(true)
         expect(presenter.selected?).to be true
-      end
-    end
-  end
-
-  describe "#label" do
-    before :each do
-      allow(presenter).to receive(:facet_missing?) { true }
-    end
-
-    context "with facet missing" do
-      it "uses [MISSING] as label" do
-        expect(presenter.label).to eq("[MISSING]")
-      end
-    end
-
-    context "with config.facet_missing_label override" do
-      it "uses the configured facet.missing label" do
-        allow(config).to receive(:facet_missing_label) { "FOO" }
-        expect(presenter.label).to eq("FOO")
       end
     end
   end
