@@ -3,3 +3,6 @@ en:
     application_name: "Funnel Cake"
     welcome: "Welcome"
     about: "About this Site"
+    search:
+      facets:
+        missing: "[MISSING]"
