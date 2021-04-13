@@ -33,4 +33,20 @@ RSpec.describe SolrDocument do
       end
     end
   end
+
+  describe "to_xml" do
+    context "when document has no payload_ss field" do
+      it "transforms xml to nil" do
+        doc = described_class.new({})
+        expect(doc.to_xml).to be_nil
+      end
+    end
+
+    context "when document has a payload_ss field" do
+      it "transforms xml to value of payload" do
+        doc = described_class.new(payload_ss: "<foo></foo>")
+        expect(doc.to_xml).to eq("<foo></foo>")
+      end
+    end
+  end
 end

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get :oai_dev, to: "internal_oai#oai"
 
 
-  scope format: false, constraints: { id: /.+/ } do
+  scope id: /([^\/]+?)(?=\.json|\.xml|$|\/)/ do
     resource :catalog, only: [:index], as: "catalog", path: "/catalog", controller: "catalog" do
       concerns :searchable
     end
