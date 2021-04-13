@@ -6,6 +6,6 @@ module FunnelcakeHelper
   end
 
   def staff_view_link(id)
-    link_to "Staff View", "/oai?verb=GetRecord&identifier=#{id}&metadataPrefix=oai_dc", data: { "turbolinks" => false }
+    link_to "Staff View", solr_document_path(id: id, format: "xml"), data: { "turbolinks" => false }
   end
 end
