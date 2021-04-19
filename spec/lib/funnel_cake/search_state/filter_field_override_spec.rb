@@ -33,8 +33,9 @@ RSpec.describe Blacklight::SearchState::FilterField do
       end
 
       it "removes facet.missing facet params" do
+        missing = I18n.t("blacklight.search.facets.missing")
         filter = search_state.filter("some_field")
-        new_state = filter.remove("[Missing]")
+        new_state = filter.remove(missing)
 
         expect(new_state.params).to eq("f" => {})
       end
