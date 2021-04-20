@@ -12,7 +12,8 @@ class FunnelCake::ConstraintsComponent < Blacklight::ConstraintsComponent
           next if val.blank? && !missing_facet
 
           if missing_facet && val.blank?
-            yield facet_item_presenter(facet.config, "[Missing]", facet.key)
+            missing = I18n.t("blacklight.search.facets.missing")
+            yield facet_item_presenter(facet.config, missing, facet.key)
           elsif val.is_a?(Array)
             yield inclusive_facet_item_presenter(facet.config, val, facet.key) if val.any?(&:present?)
           else
