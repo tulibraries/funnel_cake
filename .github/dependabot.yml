@@ -1,0 +1,39 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: blacklight
+    versions:
+    - 7.15.2
+    - 7.17.2
+    - 7.18.0
+  - dependency-name: rubocop
+    versions:
+    - 1.10.0
+    - 1.12.0
+    - 1.12.1
+  - dependency-name: listen
+    versions:
+    - 3.5.0
+  - dependency-name: bootsnap
+    versions:
+    - 1.7.3
+  - dependency-name: rspec-rails
+    versions:
+    - 4.1.0
+    - 5.0.0
+  - dependency-name: webmock
+    versions:
+    - 3.11.3
+    - 3.12.1
+  - dependency-name: rails
+    versions:
+    - 6.1.2.1
+    - 6.1.3
+  - dependency-name: puma
+    versions:
+    - 5.2.1
