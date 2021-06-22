@@ -24,7 +24,7 @@ gem "jquery-rails"
 gem "pg"
 gem "popper_js"
 gem "rsolr", ">= 1.0", "< 3"
-gem "twitter-typeahead-rails", "0.11.1.pre.corejavascript"
+gem "twitter-typeahead-rails", "0.11.1"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
