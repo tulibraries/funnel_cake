@@ -1,9 +1,9 @@
 <span class="sr-only"> Export as CSV </span>
-<div id="per_page-dropdown" class="per-page-dropdown btn-group">
-  <button type="button" class="btn btn-outine-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-    <%= t("funnelcake.export_as") %> <span class="caret"></span>
+<div id="export_as-dropdown" class="btn-group export-as-dropdown">
+  <button name="button" type="submit" class="btn dropdown-toggle" aria-expanded="false" data-toggle="dropdown" data-bs-toggle="dropdown">
+    <%= t("funnelcake.export_as") %><span class="d-none d-sm-inline"></span><span class="caret">
   </button>
-  <div class="dropdown-menu dropdown-menu-right" role="menu">
+  <div class="dropdown-menu" role="menu">
     <%= link_to('csv', csv_path(params.merge(format: "csv")), data: {turbolinks: false}, class: 'dropdown-item') %>
   </div>
 </div>
