@@ -78,7 +78,7 @@ GEM
       ostruct (>= 0.3.2)
       rails (>= 5.1, < 7)
       view_component (>= 2.28.0)
-    bootsnap (1.7.5)
+    bootsnap (1.7.6)
       msgpack (~> 1.0)
     bootstrap (5.0.1)
       autoprefixer-rails (>= 9.1.0)
