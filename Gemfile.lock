@@ -398,7 +398,7 @@ DEPENDENCIES
   sass-rails (~> 6.0)
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.4.2)
+  sqlite3
   turbolinks (~> 5)
   twitter-typeahead-rails (= 0.11.1)
   tzinfo-data

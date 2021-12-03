@@ -31,7 +31,6 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "pry-rails"
-  gem "sqlite3", "~> 1.4.2"
   gem "rubocop",  require: false
   gem "rubocop-rails", require: false
   gem "vcr"
@@ -42,6 +41,7 @@ group :development do
   gem "web-console", ">= 3.3.0"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
+  gem "sqlite3"
 end
 
 group :test do
