@@ -6,8 +6,6 @@ cd ..
 git clone --single-branch --branch dev git@github.com:tulibraries/ansible-playbook-funcake.git funcake-dev
 cd funcake-dev
 # install playbook requirements
-sudo pip install pipenv
-# install playbook requirements
 pipenv install
 # install playbook role requirements
 pipenv run ansible-galaxy install -r requirements.yml
