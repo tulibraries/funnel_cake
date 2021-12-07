@@ -22,34 +22,45 @@ workflows:
 jobs:
   run_tests:
     docker:
-      - image: circleci/ruby:2.7.2-node
+      - image: cimg/ruby:2.7.2-node
         environment:
           TZ: "America/New_York"
+          RAILS_ENV: test
 
-      - image: circleci/postgres:11-alpine
+      - image: cimg/postgres:11.13
         environment:
+          RAILS_ENV: test
           TZ: "America/New_York"
-          BUNDLER_VERSION: "2.0.1"
     steps:
       - checkout
       - run:
+          name: make sure we have the latest bundler
+          command: |
+            sudo gem update --system
+            gem install -f bundler:2.1.4
+      - run:
+          name: bundle install w/ dependent libs
           command: |
             sudo apt-get --allow-releaseinfo-change update
-            sudo gem update --system
-            sudo gem install -f bundler --version 1.17.2
             sudo apt-get update
-            sudo apt-get install postgresql-client
+            sudo apt-get install postgresql-client libsqlite3-dev
+            bundle install --path vendor/bundle
+      - run:
+          name: Ruby Lint
+          command: bundle exec rubocop
+      - run:
+          name: Set up db for run
+          command: |
             sudo psql -c "create role funnelcake with createdb login password 'password';" -U postgres -h localhost
-            sudo bundle install
-            RAILS_ENV=test sudo bundle exec rake db:setup
-            RAILS_ENV=test sudo bundle exec rake db:seed
-            RAILS_ENV=test sudo bundle exec rake db:migrate
-            SECRET_KEY_BASE=foo RAILS_ENV=test sudo bundle exec rails assets:precompile
-            sudo bundle exec rubocop
-            RAILS_ENV=test sudo bundle exec rspec
+            bundle exec rake db:setup
+            bundle exec rake db:seed
+            bundle exec rake db:migrate
+      - run:
+          name: Run ruby tests
+          command: bundle exec rspec
   dev_deploy:
     docker:
-      - image: circleci/python:3.7.2
+      - image: cimg/python:3.7.11
         environment:
           PIPENV_VENV_IN_PROJECT: true
     steps:
@@ -63,7 +74,7 @@ jobs:
 
   prod_deploy:
     docker:
-      - image: circleci/python:3.7.2
+      - image: cimg/python:3.7.11
         environment:
           PIPENV_VENV_IN_PROJECT: true
     steps:
