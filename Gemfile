@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.7.2"
 
-gem "rails", "~> 6.0.4.8"
+gem "rails", "~> 6.1.5.1"
 
 gem "blacklight"
 gem "blacklight_oai_provider", github: "projectblacklight/blacklight_oai_provider"
@@ -13,7 +13,7 @@ gem "bootsnap", ">= 1.1.0", require: false
 gem "fieldhand"
 gem "funnel_cake_index", github: "tulibraries/funnel_cake_index"
 gem "okcomputer"
-gem "puma", "~> 4.3"
+gem "puma", "~> 5.6"
 gem "sass-rails", "~> 6.0"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
