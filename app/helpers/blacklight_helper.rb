@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require "auto-linker"
-
 module BlacklightHelper
   include Blacklight::BlacklightHelperBehavior
 
-  def autolinker(text, options = {})
-    return Autolinker.parse(text[:value].first).html_safe
+  def record_page_links(text, options = {})
+    text[:value].map do |value|
+      link_to(value, value, target: "_blank", rel: "noopener")
+    end.join(" ").html_safe
   end
 
   def render_default_thumbnail_link(document, options = {})
