@@ -142,7 +142,7 @@ class CatalogController < ApplicationController
     config.add_show_field "format_ssim", label: "Format", link_to_facet: true, separator_options: facet_separator_options
     config.add_show_field "language_ssim", label: "Language", link_to_facet: true, separator_options: facet_separator_options
     config.add_show_field "date_ssim", label: "Date", link_to_facet: true, separator_options: facet_separator_options
-    config.add_show_field "description_tsim", label: "Description", helper_method: :autolinker
+    config.add_show_field "description_tsim", label: "Description"
     config.add_show_field "extent_ssim", label: "Extent", link_to_facet: true, separator_options: facet_separator_options
     config.add_show_field "publisher_ssim", label: "Publisher", link_to_facet: true, separator_options: facet_separator_options
     config.add_show_field "relation_ssim", label: "Relation", link_to_facet: true
@@ -153,16 +153,16 @@ class CatalogController < ApplicationController
     config.add_show_field "id", label: "Identifier", link_to_facet: true
     config.add_show_field "fileFormat_ssim",  label: "File Format", link_to_facet: true, separator_options: facet_separator_options
     config.add_show_field "rights_ssim",  label: "Rights", link_to_facet: true
-    config.add_show_field "rightsUri_ssim",  label: "Rights URI", helper_method: :autolinker, separator_options: facet_separator_options
-    config.add_show_field "iiifManifest_ssim",  label: "IIIF Manifest", helper_method: :autolinker, separator_options: facet_separator_options
-    config.add_show_field "iiifBaseUrl_ssim",  label: "IIIF Base URL", helper_method: :autolinker, separator_options: facet_separator_options
-    config.add_show_field "mediaMaster_ssim",  label: "Media Master", helper_method: :autolinker, separator_options: facet_separator_options
+    config.add_show_field "rightsUri_ssim",  label: "Rights URI", helper_method: :record_page_links, separator_options: facet_separator_options
+    config.add_show_field "iiifManifest_ssim",  label: "IIIF Manifest", helper_method: :record_page_links, separator_options: facet_separator_options
+    config.add_show_field "iiifBaseUrl_ssim",  label: "IIIF Base URL", helper_method: :record_page_links, separator_options: facet_separator_options
+    config.add_show_field "mediaMaster_ssim",  label: "Media Master", helper_method: :record_page_links, separator_options: facet_separator_options, multi: true
     config.add_show_field "collection_ssim", label: "Collection", link_to_facet: true, separator_options: facet_separator_options
     config.add_show_field "contributingInstitution_ssim", label: "Contributing Institution", link_to_facet: true, separator_options: facet_separator_options
 
     config.add_show_field "intermediateProvider_ssim", label: "Intermediate Provider", link_to_facet: true, separator_options: facet_separator_options
-    config.add_show_field "url_ssim", label: "URL", helper_method: :autolinker, separator_options: facet_separator_options
-    config.add_show_field "preview_ssim", label: "Preview", helper_method: :autolinker
+    config.add_show_field "url_ssim", label: "URL", helper_method: :record_page_links, separator_options: facet_separator_options
+    config.add_show_field "preview_ssim", label: "Preview", helper_method: :record_page_links
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
