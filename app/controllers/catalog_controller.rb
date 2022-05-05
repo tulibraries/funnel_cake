@@ -4,8 +4,6 @@ class CatalogController < ApplicationController
   before_action(:catalog_params, only: :index)
   include Blacklight::Catalog
 
-  self.search_state_class = FunnelCake::SearchState
-
   configure_blacklight do |config|
     ## Class for sending and receiving requests from a search index
     # config.repository_class = Blacklight::Solr::Repository
