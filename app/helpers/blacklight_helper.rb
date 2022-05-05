@@ -6,7 +6,7 @@ module BlacklightHelper
   def record_page_links(text, options = {})
     text[:value].map do |value|
       link_to(value, value, target: "_blank", rel: "noopener")
-    end.join(" ").html_safe
+    end.join("; ").html_safe
   end
 
   def render_default_thumbnail_link(document, options = {})
