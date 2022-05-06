@@ -85,7 +85,7 @@ GEM
     autoprefixer-rails (10.4.2.0)
       execjs (~> 2)
     bindex (0.8.1)
-    blacklight (7.24.0)
+    blacklight (7.25.1)
       deprecation
       globalid
       i18n (>= 1.7.0)
@@ -201,7 +201,7 @@ GEM
     minitest (5.15.0)
     msgpack (1.5.1)
     nio4r (2.5.8)
-    nokogiri (1.13.4)
+    nokogiri (1.13.5)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     oai (1.2.1)
