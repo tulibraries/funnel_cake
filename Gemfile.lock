@@ -85,9 +85,10 @@ GEM
     autoprefixer-rails (10.4.2.0)
       execjs (~> 2)
     bindex (0.8.1)
-    blacklight (7.24.0)
+    blacklight (7.25.2)
       deprecation
       globalid
+      hashdiff
       i18n (>= 1.7.0)
       jbuilder (~> 2.7)
       kaminari (>= 0.15)
@@ -182,7 +183,7 @@ GEM
     llhttp-ffi (0.4.0)
       ffi-compiler (~> 1.0)
       rake (~> 13.0)
-    loofah (2.17.0)
+    loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -201,7 +202,7 @@ GEM
     minitest (5.15.0)
     msgpack (1.5.1)
     nio4r (2.5.8)
-    nokogiri (1.13.4)
+    nokogiri (1.13.6)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     oai (1.2.1)
@@ -355,7 +356,7 @@ GEM
     unf_ext (0.0.8.1)
     unicode-display_width (2.1.0)
     vcr (6.1.0)
-    view_component (2.53.0)
+    view_component (2.55.0)
       activesupport (>= 5.0.0, < 8.0)
       method_source (~> 1.0)
     web-console (4.2.0)
