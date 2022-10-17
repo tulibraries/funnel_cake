@@ -21,7 +21,7 @@ gem "bootstrap", "~> 4.6"
 gem "dotenv-rails"
 gem "jquery-rails"
 gem "pg"
-gem "popper_js", "~> 1.16.0"
+gem "popper_js", "~> 1.16.1"
 gem "rsolr", ">= 1.0", "< 3"
 gem "twitter-typeahead-rails", "0.11.1"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
