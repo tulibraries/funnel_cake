@@ -85,7 +85,7 @@ GEM
     autoprefixer-rails (10.4.2.0)
       execjs (~> 2)
     bindex (0.8.1)
-    blacklight (7.29.0)
+    blacklight (7.33.0)
       deprecation
       globalid
       hashdiff
@@ -94,7 +94,7 @@ GEM
       kaminari (>= 0.15)
       ostruct (>= 0.3.2)
       rails (>= 5.1, < 7.1)
-      view_component (~> 2.43)
+      view_component (~> 2.66)
     bootsnap (1.13.0)
       msgpack (~> 1.2)
     bootstrap (4.6.1)
@@ -117,6 +117,7 @@ GEM
     crack (0.4.5)
       rexml
     crass (1.0.6)
+    date (3.3.1)
     deprecation (1.1.0)
       activesupport
     diff-lcs (1.5.0)
@@ -184,11 +185,14 @@ GEM
     llhttp-ffi (0.4.0)
       ffi-compiler (~> 1.0)
       rake (~> 13.0)
-    loofah (2.18.0)
+    loofah (2.19.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.7.1)
+    mail (2.8.0)
       mini_mime (>= 0.1.1)
+      net-imap
+      net-pop
+      net-smtp
     marc (1.1.1)
       rexml
       scrub_rb (>= 1.0.1, < 2)
@@ -202,6 +206,15 @@ GEM
     mini_portile2 (2.8.0)
     minitest (5.16.3)
     msgpack (1.6.0)
+    net-imap (0.3.2)
+      date
+      net-protocol
+    net-pop (0.1.2)
+      net-protocol
+    net-protocol (0.2.1)
+      timeout
+    net-smtp (0.3.3)
+      net-protocol
     nio4r (2.5.8)
     nokogiri (1.13.10)
       mini_portile2 (~> 2.8.0)
@@ -332,6 +345,7 @@ GEM
       mini_portile2 (~> 2.8.0)
     thor (1.2.1)
     tilt (2.0.10)
+    timeout (0.3.1)
     traject (3.7.0)
       concurrent-ruby (>= 0.8.0)
       dot-properties (>= 0.1.1)
@@ -359,8 +373,9 @@ GEM
     unf_ext (0.0.8.1)
     unicode-display_width (2.3.0)
     vcr (6.1.0)
-    view_component (2.62.0)
+    view_component (2.79.0)
       activesupport (>= 5.0.0, < 8.0)
+      concurrent-ruby (~> 1.0)
       method_source (~> 1.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
@@ -377,7 +392,7 @@ GEM
     xpath (3.2.0)
       nokogiri (~> 1.8)
     yell (2.2.2)
-    zeitwerk (2.6.1)
+    zeitwerk (2.6.6)
 
 PLATFORMS
   ruby
