@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/projectblacklight/blacklight_oai_provider.git
-  revision: 7728dba9a38ceb6165335dea817b23c416d82966
+  revision: 7d52043483e0d5088cbfca783f2c0fcd9a02e4e6
   specs:
     blacklight_oai_provider (7.0.2)
       blacklight (~> 7.0)
@@ -130,7 +130,7 @@ GEM
       railties (>= 3.2)
     erubi (1.11.0)
     execjs (2.8.1)
-    faraday (2.7.1)
+    faraday (2.7.2)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-follow_redirects (0.3.0)
