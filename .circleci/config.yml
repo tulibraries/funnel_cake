@@ -27,7 +27,7 @@ jobs:
           TZ: "America/New_York"
           RAILS_ENV: test
 
-      - image: cimg/postgres:11.13
+      - image: cimg/postgres:13.4
         environment:
           RAILS_ENV: test
           TZ: "America/New_York"
