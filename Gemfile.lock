@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/funnel_cake_index.git
-  revision: 09ef38680d4e21996e731cc7492e458210307dd6
+  revision: 8ff3cd421a6c5bbeaa8fd490e84d488091d3c084
   specs:
     funnel_cake_index (0.0.1)
       gli (~> 2.18)
@@ -124,7 +124,8 @@ GEM
     diff-lcs (1.5.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    dot-properties (0.1.3)
+    dot-properties (0.1.4)
+      bundler (>= 2.2.33)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
