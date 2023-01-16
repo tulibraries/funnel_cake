@@ -5,10 +5,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.7.7"
 
-gem "rails", "~> 6.1.6.1"
+gem "rails", "6.1.7"
 
 gem "blacklight"
-gem "blacklight_oai_provider", github: "projectblacklight/blacklight_oai_provider"
+gem "blacklight_oai_provider", github: "projectblacklight/blacklight_oai_provider", branch: "main"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "fieldhand"
 gem "funnel_cake_index", github: "tulibraries/funnel_cake_index"
