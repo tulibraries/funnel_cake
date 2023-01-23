@@ -70,6 +70,7 @@ jobs:
             - "96:52:81:94:2a:1f:32:82:cd:b5:2d:e3:e3:9e:9d:08"
       - run:
           command: bash .circleci/deploy-dev.sh
+          no_output_timeout: 30m
 
   prod_deploy:
     docker:
@@ -83,3 +84,4 @@ jobs:
             - "96:52:81:94:2a:1f:32:82:cd:b5:2d:e3:e3:9e:9d:08"
       - run:
           command: bash .circleci/deploy-prod.sh
+          no_output_timeout: 30m
