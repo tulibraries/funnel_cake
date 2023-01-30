@@ -5,8 +5,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem "rails", "6.1.7"
 
-gem "blacklight"
-gem "blacklight_oai_provider", github: "projectblacklight/blacklight_oai_provider", branch: "main"
+gem "blacklight", "8.0.0.beta1"
+gem "blacklight_oai_provider", github: "projectblacklight/blacklight_oai_provider", branch: "update-to-bl-8.x"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "fieldhand"
 gem "funnel_cake_index", github: "tulibraries/funnel_cake_index"
