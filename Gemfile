@@ -11,7 +11,7 @@ gem "bootsnap", ">= 1.1.0", require: false
 gem "fieldhand"
 gem "funnel_cake_index", github: "tulibraries/funnel_cake_index"
 gem "okcomputer"
-gem "puma", "~> 5.6"
+gem "puma", "~> 6.2"
 gem "sass-rails", "~> 6.0"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
