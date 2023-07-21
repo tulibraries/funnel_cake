@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV.fetch("PADIGITAL_DB_HOST") { "localhost" } %>
+  pool: 5
+  username: <%= ENV.fetch("PADIGITAL_DB_USER") { "padigital" } %>
+  password: <%= ENV.fetch("PADIGITAL_DB_PASSWORD") { "" }%>
+
+development:
+  <<: *default
+  database: padigital_development
+
+test:
+  <<: *default
+  database: padigital_test
+
+production:
+  <<: *default
+  database: padigital 

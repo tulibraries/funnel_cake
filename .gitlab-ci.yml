@@ -1,0 +1,98 @@
+include:
+  - project: "infrastructure-engineering-shared/gitlab-ci-templates"
+    file:
+      - "lint_docker.yaml"
+      - "build_docker.yaml"
+      - "security_scan.yaml"
+      - "kubectl_commands.yaml"
+
+variables:
+  IMAGE: "tulibraries/padigital"
+  HARBOR: "harbor.k8s.temple.edu"
+  HELM_EXPERIMENTAL_OCI: "1"
+
+.export_variables: &export_variables
+  - source .env
+  - export VERSION="${DOCKER_IMAGE_VERSION}-${CI_COMMIT_SHORT_SHA}"
+
+before_script:
+  - *export_variables
+
+stages:
+  - lint
+  - build
+  - scan
+  - tag
+  - deploy
+
+lint:
+  extends: .lint_docker
+  variables:
+    DF: ".docker/app/Dockerfile.prod"
+  except:
+    - tags
+    
+build:
+  stage: build
+  extends: .build_image
+  variables:
+    DF: ".docker/app/Dockerfile.prod --build-arg SECRET_KEY_BASE=$SECRET_KEY_BASE --no-cache"
+  except:
+    - tags
+    
+scan:
+  stage: scan
+  extends: .scanimage_high
+  variables:
+    THRESHOLD: 10
+  except:
+    - tags
+
+tag:
+  stage: tag
+  extends: .tag_image
+  except:
+    - tags
+
+qa_deploy:
+  variables:
+    IMAGE: $HARBOR/tulibraries/padigital
+    RANCHER: rancher-np
+    CLUSTER: dev-library1
+  stage: deploy
+  extends: .helm_setup
+  only:
+    - main
+  script:
+    - *export_variables
+    - helm pull oci://$HARBOR/tulibraries/padigital-charts/padigital --version "0.1.*" --untar
+    - helm upgrade padigital oci://$HARBOR/tulibraries/padigital-charts/padigital --version "0.1.*" --history-max=5 --namespace=padigital-qa --values padigital/values.yaml --set image.repository=$IMAGE:$VERSION
+
+tag_prod:
+  stage: tag
+  extends: .tag_image
+  variables:
+    TAG: prod
+  only:
+    - tags
+
+tag_release:
+  stage: tag
+  extends: .tag_image
+  variables:
+    TAG: $CI_COMMIT_TAG
+  only:
+    - tags
+
+prod_deploy:
+  variables:
+    IMAGE: harbor.k8s.temple.edu/tulibraries/padigital
+    RANCHER: rancher
+    CLUSTER: prod-library1
+  stage: deploy
+  extends: .helm_setup
+  only:
+    - tags
+  script:
+    - helm pull oci://$HARBOR/tulibraries/padigital-charts/padigital --version "0.1.0" --untar
+    - helm upgrade padigital oci://$HARBOR/tulibraries/padigital-charts/padigital --version "0.1.0" --history-max=5 --namespace=padigital-prod --values padigital/values-prod.yaml --set image.repository=$IMAGE:$CI_COMMIT_TAG
