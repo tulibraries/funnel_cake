@@ -143,5 +143,5 @@ Rails/LexicallyScopedActionFilter:
   Enabled: false
 
 Rails/SkipsModelValidations:
-  Whitelist:
+  AllowedMethods:
   - update_all
