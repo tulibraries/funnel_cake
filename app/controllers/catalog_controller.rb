@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CatalogController < ApplicationController
-  before_action(:catalog_params, only: :index)
+  before_action(:catalog_params, only: [:index, :show])
   include Blacklight::Catalog
 
   configure_blacklight do |config|

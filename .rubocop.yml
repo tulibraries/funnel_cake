@@ -141,3 +141,7 @@ Rails/HttpPositionalArguments:
 
 Rails/LexicallyScopedActionFilter:
   Enabled: false
+
+Rails/SkipsModelValidations:
+  AllowedMethods:
+  - update_all
