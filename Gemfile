@@ -3,9 +3,8 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem "rails", "6.1.7.3"
-
-gem "blacklight"
+gem "rails", "6.1.7.4"
+gem "blacklight", "~> 7.33.0"
 gem "blacklight_oai_provider", github: "projectblacklight/blacklight_oai_provider", branch: "main"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "fieldhand"
