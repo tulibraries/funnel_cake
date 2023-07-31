@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative "boot"
 
 require "rails/all"
@@ -19,6 +20,6 @@ module FunnelCake
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-     config.funnel_cake = config_for(:funnel_cake).with_indifferent_access
+    config.funnel_cake = config_for(:funnel_cake).with_indifferent_access
   end
 end
