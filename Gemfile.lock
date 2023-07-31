@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/funnel_cake_index.git
-  revision: c6ad23c4c89b96191d7c8cb4df5df72d55dde81d
+  revision: 775fb9c68bb6322be29c87b7f1cb8033314fff2e
   specs:
     funnel_cake_index (0.0.1)
       gli (~> 2.18)
@@ -80,7 +80,7 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
-    addressable (2.8.1)
+    addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     autoprefixer-rails (10.4.7.0)
@@ -132,7 +132,7 @@ GEM
       railties (>= 3.2)
     erubi (1.12.0)
     execjs (2.8.1)
-    faraday (2.7.5)
+    faraday (2.7.10)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-follow_redirects (0.3.0)
@@ -144,7 +144,7 @@ GEM
       rake
     fieldhand (0.12.0)
       ox (~> 2.5)
-    gli (2.21.0)
+    gli (2.21.1)
     globalid (1.1.0)
       activesupport (>= 5.0)
     hashdiff (1.0.1)
@@ -239,7 +239,7 @@ GEM
       method_source (~> 1.0)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
-    public_suffix (5.0.1)
+    public_suffix (5.0.3)
     puma (6.3.0)
       nio4r (~> 2.0)
     racc (1.7.1)
@@ -334,7 +334,7 @@ GEM
       sprockets-rails
       tilt
     scrub_rb (1.0.1)
-    slop (4.9.3)
+    slop (4.10.1)
     spring (4.1.1)
     spring-watcher-listen (2.1.0)
       listen (>= 2.7, < 4.0)
