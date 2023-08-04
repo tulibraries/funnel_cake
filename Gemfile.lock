@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/funnel_cake_index.git
-  revision: 775fb9c68bb6322be29c87b7f1cb8033314fff2e
+  revision: 1fd594373b6a34a3fb0625786d17c2cebcb89d8f
   specs:
     funnel_cake_index (0.0.1)
       gli (~> 2.18)
@@ -86,7 +86,7 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    addressable (2.8.4)
+    addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     autoprefixer-rails (10.4.13.0)
