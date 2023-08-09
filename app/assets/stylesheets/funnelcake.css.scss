@@ -2,7 +2,10 @@ $link-color: #051D49;
 $facet-color: #9c27b0;
 $selected-item-background: #6c757d;
 $selected-item-color: white;
-$logo-width: 65px;
+
+.navbar-logo {
+	background-size: 65px 50px !important;
+}
 
 .document-title-heading a{
 	color: $link-color;
