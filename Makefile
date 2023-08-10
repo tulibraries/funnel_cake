@@ -1,8 +1,8 @@
 .PHONY: up check
 
 #Defaults
-include .env
-export #exports the .env variables
+include .env.prod
+export #exports the .env.prod variables
 
 IMAGE ?= tulibraries/padigital
 VERSION ?= $(DOCKER_IMAGE_VERSION)
