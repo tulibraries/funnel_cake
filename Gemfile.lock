@@ -93,16 +93,14 @@ GEM
       execjs (~> 2)
     base64 (0.1.1)
     bindex (0.8.1)
-    blacklight (7.33.1)
-      deprecation
+    blacklight (8.0.1)
       globalid
-      hashdiff
       i18n (>= 1.7.0)
       jbuilder (~> 2.7)
       kaminari (>= 0.15)
       ostruct (>= 0.3.2)
-      rails (>= 5.1, < 7.1)
-      view_component (~> 2.66)
+      rails (>= 6.1, < 8)
+      view_component (>= 2.66, < 3.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     bootstrap (4.6.2)
@@ -126,8 +124,6 @@ GEM
       rexml
     crass (1.0.6)
     date (3.3.3)
-    deprecation (1.1.0)
-      activesupport
     diff-lcs (1.5.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -388,7 +384,7 @@ GEM
     unf_ext (0.0.8.2)
     unicode-display_width (2.4.2)
     vcr (6.2.0)
-    view_component (2.82.0)
+    view_component (3.0.0)
       activesupport (>= 5.2.0, < 8.0)
       concurrent-ruby (~> 1.0)
       method_source (~> 1.0)
@@ -413,7 +409,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  blacklight (~> 7.33.0)
+  blacklight (~> 8.0.1)
   blacklight_oai_provider!
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.6)
