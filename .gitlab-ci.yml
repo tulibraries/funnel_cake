@@ -12,7 +12,7 @@ variables:
   HELM_EXPERIMENTAL_OCI: "1"
 
 .export_variables: &export_variables
-  - source .env
+  - source .env.prod
   - export VERSION="${DOCKER_IMAGE_VERSION}-${CI_COMMIT_SHORT_SHA}"
 
 before_script:
