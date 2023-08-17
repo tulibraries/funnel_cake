@@ -15,16 +15,16 @@ ARG SECRET_KEY_BASE
 # libc6-compat is required for m1 build.
 RUN apk add -U --no-cache \
       bash=5.2.15-r5 \
-      libc6-compat=1.2.4-r0 \
+      libc6-compat=1.2.4-r1 \
       libxslt=1.1.38-r0 \
-      postgresql14-client=14.8-r0 \
+      postgresql14-client=14.9-r0 \
       shared-mime-info=2.2-r5  \
       tzdata=2023c-r1 && \
     apk add -U --no-cache --virtual build-dependencies \
       build-base=0.5-r3 \
       git=2.40.1-r0 \
       libxslt-dev=1.1.38-r0 \
-      postgresql14-dev=14.8-r0 \
+      postgresql14-dev=14.9-r0 \
       nodejs=18.17.0-r0 \
       yarn=1.22.19-r0 && \
     bundle config set --local without "development test" && \

@@ -54,11 +54,11 @@ lint:
 scan:
 	@if [ $(CLEAR_CACHES) == yes ]; \
 		then \
-			trivy image -c $(HARBOR)/$(IMAGE):$(VERSION); \
+			trivy image --scanners vuln  -c $(HARBOR)/$(IMAGE):$(VERSION); \
 		fi
 	@if [ $(CI) == false ]; \
 		then \
-			trivy image $(HARBOR)/$(IMAGE):$(VERSION); \
+			trivy image --scanners vuln $(HARBOR)/$(IMAGE):$(VERSION); \
 		fi
 
 deploy: scan lint
