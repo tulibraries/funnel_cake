@@ -28,7 +28,7 @@ stages:
 lint:
   extends: .lint_docker
   variables:
-    DF: ".docker/app/Dockerfile.prod"
+    DF: ".docker/app/Dockerfile"
   except:
     - tags
     
@@ -36,15 +36,13 @@ build:
   stage: build
   extends: .build_image
   variables:
-    DF: ".docker/app/Dockerfile.prod --build-arg SECRET_KEY_BASE=$SECRET_KEY_BASE --no-cache"
+    DF: ".docker/app/Dockerfile --build-arg SECRET_KEY_BASE=$SECRET_KEY_BASE --no-cache"
   except:
     - tags
     
 scan:
   stage: scan
-  extends: .scanimage_high
-  variables:
-    THRESHOLD: 10
+  extends: .scanimage_extended
   except:
     - tags
 
