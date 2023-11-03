@@ -57,7 +57,7 @@ qa_deploy:
     - main
   script:
     - *export_variables
-    - helm pull oci://$HARBOR/tulibraries/padigital-charts/padigital --version "0.1.*" --untar
+    - helm pull oci://$HARBOR/tulibraries/padigital-charts/padigital --untar
     - helm upgrade padigital oci://$HARBOR/tulibraries/padigital-charts/padigital --version "0.1.*" --history-max=5 --namespace=padigital-qa --values padigital/values.yaml --set image.repository=$IMAGE:$VERSION
 
 tag_prod:
