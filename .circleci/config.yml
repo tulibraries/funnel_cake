@@ -60,7 +60,7 @@ jobs:
           command: bundle exec rspec
   dev_deploy:
     docker:
-      - image: cimg/python:3.7.11
+      - image: cimg/python:3.10.13
         environment:
           PIPENV_VENV_IN_PROJECT: true
     steps:
@@ -74,7 +74,7 @@ jobs:
 
   prod_deploy:
     docker:
-      - image: cimg/python:3.7.11
+      - image: cimg/python:3.10.13
         environment:
           PIPENV_VENV_IN_PROJECT: true
     steps:
