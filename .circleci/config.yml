@@ -22,7 +22,7 @@ workflows:
 jobs:
   run_tests:
     docker:
-      - image: cimg/ruby:3.1.3-node
+      - image: cimg/ruby:3.1.4-node
         environment:
           TZ: "America/New_York"
           RAILS_ENV: test
