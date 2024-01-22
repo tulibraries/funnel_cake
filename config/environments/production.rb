@@ -58,7 +58,7 @@ Rails.application.configure do
   config.log_tags = [ :request_id ]
 
   # Use a different cache store in production.
-  config.cache_store = :mem_cache_store if ENV["K8"] == yes
+  config.cache_store = :mem_cache_store if ENV["K8"] == "yes"
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
