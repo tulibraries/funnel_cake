@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem "rails", "7.0.8"
 
-gem "base64", "0.1.1"
+gem "base64", "0.2.0"
 gem "blacklight", "~> 7.33.0"
 gem "blacklight_oai_provider", github: "projectblacklight/blacklight_oai_provider", branch: "main"
 gem "bootsnap", ">= 1.1.0", require: false

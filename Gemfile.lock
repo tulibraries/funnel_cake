@@ -91,7 +91,7 @@ GEM
     ast (2.4.2)
     autoprefixer-rails (10.4.16.0)
       execjs (~> 2)
-    base64 (0.1.1)
+    base64 (0.2.0)
     bigdecimal (3.1.6)
     bindex (0.8.1)
     blacklight (7.33.1)
@@ -419,7 +419,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  base64 (= 0.1.1)
+  base64 (= 0.2.0)
   blacklight (~> 7.33.0)
   blacklight_oai_provider!
   bootsnap (>= 1.1.0)
