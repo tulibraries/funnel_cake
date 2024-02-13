@@ -136,10 +136,10 @@ GEM
     domain_name (0.6.20240107)
     dot-properties (0.1.4)
       bundler (>= 2.2.33)
-    dotenv (2.8.1)
-    dotenv-rails (2.8.1)
-      dotenv (= 2.8.1)
-      railties (>= 3.2)
+    dotenv (3.0.0)
+    dotenv-rails (3.0.0)
+      dotenv (= 3.0.0)
+      railties (>= 6.1)
     erubi (1.12.0)
     execjs (2.9.1)
     faraday (2.9.0)
@@ -218,7 +218,7 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.5)
-    minitest (5.21.2)
+    minitest (5.22.2)
     msgpack (1.7.2)
     net-http (0.4.1)
       uri
@@ -413,7 +413,7 @@ GEM
     xpath (3.2.0)
       nokogiri (~> 1.8)
     yell (2.2.2)
-    zeitwerk (2.6.12)
+    zeitwerk (2.6.13)
 
 PLATFORMS
   ruby
