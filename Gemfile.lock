@@ -10,13 +10,13 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/funnel_cake_index.git
-  revision: 842d0993c0156dd85699bc082482b3c4643b66fa
+  revision: 6ba72a2393940faa9d1156268f5ff0673246ee16
   specs:
     funnel_cake_index (0.0.1)
-      gli (~> 2.18)
-      library_stdnums (~> 1.6)
-      rsolr (~> 2.2)
-      traject (~> 3.1)
+      gli
+      library_stdnums
+      rsolr
+      traject
 
 GEM
   remote: https://rubygems.org/
