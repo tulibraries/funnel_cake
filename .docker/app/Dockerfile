@@ -38,7 +38,7 @@ RUN apk add -U --no-cache \
     rm -rf /var/cache/apk/ && \
     chown nobody -R /app/tmp && \
     chown nobody -R /app/log && \
-    ln -s .env.dev .env
+    ln -s .env.prod .env
 
 USER nobody
 
