@@ -237,6 +237,12 @@ class CatalogController < ApplicationController
       }
     end
 
+    config.add_search_field("id", label: "Identifier") do |field|
+      field.solr_parameters = {
+        qf: "id_tsi",
+      }
+    end
+
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
