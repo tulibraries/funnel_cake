@@ -56,8 +56,8 @@ qa_deploy:
     - main
   script:
     - *export_variables
-    - helm pull oci://$HARBOR/tulibraries/padigital-charts/padigital --untar
-    - helm upgrade padigital oci://$HARBOR/tulibraries/padigital-charts/padigital --history-max=5 --namespace=padigital-qa --values padigital/values.yaml --set image.repository=$IMAGE:$VERSION
+    - helm pull oci://$HARBOR/tulibraries/charts/padigital --untar
+    - helm upgrade padigital oci://$HARBOR/tulibraries/charts/padigital --history-max=5 --namespace=padigital-qa --values padigital/values.yaml --set image.repository=$IMAGE:$VERSION
 
 tag_prod:
   stage: tag
@@ -85,5 +85,5 @@ prod_deploy:
   only:
     - tags
   script:
-    - helm pull oci://$HARBOR/tulibraries/padigital-charts/padigital --version $HELM_VERSION_PROD --untar
-    - helm upgrade padigital oci://$HARBOR/tulibraries/padigital-charts/padigital --version $HELM_VERSION_PROD --history-max=5 --namespace=padigital-prod --values padigital/values-prod.yaml --set image.repository=$IMAGE:$CI_COMMIT_TAG
+    - helm pull oci://$HARBOR/tulibraries/charts/padigital --version $HELM_VERSION_PROD --untar
+    - helm upgrade padigital oci://$HARBOR/tulibraries/charts/padigital --version $HELM_VERSION_PROD --history-max=5 --namespace=padigital-prod --values padigital/values-prod.yaml --set image.repository=$IMAGE:$CI_COMMIT_TAG
