@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/funnel_cake_index.git
-  revision: b663022b605c5ad6c67a3485aaa1c4cca720bb7b
+  revision: 9ea7eaa72f585b2750de93cef43c84db4d15a67f
   specs:
     funnel_cake_index (0.0.1)
       gli
@@ -232,7 +232,7 @@ GEM
     net-smtp (0.4.0.1)
       net-protocol
     nio4r (2.7.0)
-    nokogiri (1.16.3)
+    nokogiri (1.16.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     oai (1.2.1)
