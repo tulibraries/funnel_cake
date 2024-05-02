@@ -1,0 +1,39 @@
+<%= content_tag @component,
+  id: @id,
+  data: {
+    'document-id': @document.id.to_s.parameterize,
+    'document-counter': @counter,
+  },
+  itemscope: true,
+  itemtype: @document.itemtype,
+  class: classes.flatten.join(' ') do %>
+  <%= header %>
+  <% if body.present? %>
+    <%= body %>
+  <% else %>
+    <div class="document-main-section">
+      <%= title %>
+      <%= embed %>
+      <%= content %>
+      <%= metadata %>
+      <% metadata_sections.each do |section| %>
+        <%= section %>
+      <% end %>
+
+      <% partials.each do |partial| %>
+        <%= partial %>
+      <% end %>
+    </div>
+
+    <%= thumbnail %>
+
+		<div class="col-12">
+			<dl class="row dl-invert document-metadata">
+				<dt class="align-self-center col-md-3">
+					<%= link_to "Staff View", solr_document_path(id: @document.id, format: "xml"), data: { "turbolinks" => false } %>
+				</dt>
+			</dl>
+		</div>
+  <% end %>
+  <%= footer %>
+<% end %>
