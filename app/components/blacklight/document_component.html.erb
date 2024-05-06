@@ -19,21 +19,18 @@
       <% metadata_sections.each do |section| %>
         <%= section %>
       <% end %>
-
       <% partials.each do |partial| %>
         <%= partial %>
       <% end %>
+
+      <dl class="row dl-invert document-metadata">
+        <dt class="align-self-center col-md-3">
+          <%= link_to "Staff View", solr_document_path(id: @document.id, format: "xml"), data: { "turbolinks" => false } %>
+        </dt>
+      </dl>
     </div>
 
     <%= thumbnail %>
-
-		<div class="col-12">
-			<dl class="row dl-invert document-metadata">
-				<dt class="align-self-center col-md-3">
-					<%= link_to "Staff View", solr_document_path(id: @document.id, format: "xml"), data: { "turbolinks" => false } %>
-				</dt>
-			</dl>
-		</div>
   <% end %>
   <%= footer %>
 <% end %>

@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/funnel_cake_index.git
-  revision: 1a0deb48ab31bb98988c42d51ac9ad41d827a23e
+  revision: afcae9088aaec5418e078a8f296d91141251f018
   specs:
     funnel_cake_index (0.0.1)
       gli
@@ -103,16 +103,14 @@ GEM
     base64 (0.2.0)
     bigdecimal (3.1.8)
     bindex (0.8.1)
-    blacklight (7.37.0)
-      deprecation
+    blacklight (8.0.1)
       globalid
-      hashdiff
       i18n (>= 1.7.0)
       jbuilder (~> 2.7)
       kaminari (>= 0.15)
       ostruct (>= 0.3.2)
-      rails (>= 5.1, < 7.2)
-      view_component (>= 2.66, < 4)
+      rails (>= 6.1, < 8)
+      view_component (>= 2.66, < 3.1)
     bootsnap (1.18.3)
       msgpack (~> 1.2)
     bootstrap (4.6.2)
@@ -139,8 +137,6 @@ GEM
     crass (1.0.6)
     dalli (3.2.8)
     date (3.3.4)
-    deprecation (1.1.0)
-      activesupport
     diff-lcs (1.5.1)
     domain_name (0.6.20240107)
     dot-properties (0.1.4)
@@ -256,7 +252,7 @@ GEM
       faraday-follow_redirects (>= 0.3.0, < 2)
     okcomputer (1.18.5)
     ostruct (0.6.0)
-    ox (2.14.17)
+    ox (2.14.18)
     parallel (1.24.0)
     parser (3.3.2.0)
       ast (~> 2.4.1)
@@ -424,7 +420,7 @@ GEM
     unicode-display_width (2.5.0)
     uri (0.13.0)
     vcr (6.2.0)
-    view_component (3.12.1)
+    view_component (3.0.0)
       activesupport (>= 5.2.0, < 8.0)
       concurrent-ruby (~> 1.0)
       method_source (~> 1.0)
@@ -447,11 +443,24 @@ GEM
     zeitwerk (2.6.14)
 
 PLATFORMS
-  ruby
+  aarch64-linux
+  aarch64-linux-gnu
+  aarch64-linux-musl
+  arm-linux
+  arm-linux-gnu
+  arm-linux-musl
+  arm64-darwin
+  x86-linux
+  x86-linux-gnu
+  x86-linux-musl
+  x86_64-darwin
+  x86_64-linux
+  x86_64-linux-gnu
+  x86_64-linux-musl
 
 DEPENDENCIES
   base64 (= 0.2.0)
-  blacklight (~> 7.37.0)
+  blacklight (~> 8.0.1)
   blacklight_oai_provider!
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.6)
@@ -489,4 +498,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   2.3.26
+   2.5.6
