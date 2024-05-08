@@ -23,7 +23,6 @@
         <%= partial %>
       <% end %>
 
-      <% binding.pry %>
       <%= render(Blacklight::Document::StaffViewLinkComponent.new(@document.id)) if @id %>
     </div>
 

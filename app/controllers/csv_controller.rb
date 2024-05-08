@@ -9,7 +9,8 @@ class CsvController < CatalogController
 
   def index
     @search_state = search_state_class.new(params, blacklight_config, self)
-    (@response, @document_list) = search_service.search_results
+    @response = search_service.search_results
+    @document_list = @response.documents
     respond_to do |format|
       format.csv do
         send_data render_search_results_as_csv,
