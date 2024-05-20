@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/funnel_cake_index.git
-  revision: b8392866eeb63a7ea886d2cde7b4e25c54b54d75
+  revision: 1a0deb48ab31bb98988c42d51ac9ad41d827a23e
   specs:
     funnel_cake_index (0.0.1)
       gli
@@ -273,7 +273,7 @@ GEM
     public_suffix (5.0.5)
     puma (6.4.2)
       nio4r (~> 2.0)
-    racc (1.7.3)
+    racc (1.8.0)
     rack (3.0.11)
     rack-session (2.0.0)
       rack (>= 3.0.0)
