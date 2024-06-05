@@ -39,8 +39,8 @@ class CsvController < CatalogController
         end
         params["cursorMark"] = @response["nextCursorMark"]
         @search_state = search_state_class.new(params, blacklight_config, self)
-				@response = search_service.search_results
-				@document_list = @response.documents
+        @response = search_service.search_results
+        @document_list = @response.documents
       end
     end
   end
