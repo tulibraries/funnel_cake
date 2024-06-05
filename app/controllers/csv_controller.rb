@@ -33,7 +33,6 @@ class CsvController < CatalogController
       # Loop through all results until response nextCursorMark is the same as requested cursorMark
       # CursorMark params logic is handled by the additional processor chain step in CsvSearchBuilder
       while (@response["nextCursorMark"] != params["cursorMark"])
-        binding.pry
         @document_list.each do |doc|
           csv << show_fields.map { |field| Array(doc.fetch(field[:solr_name], nil)).join(" ; ") }
         end
