@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem "rails", "7.1.3.3"
+gem "rails", "7.1.3.4"
 
 gem "base64", "0.2.0"
 gem "blacklight", "~> 7.37.0"
