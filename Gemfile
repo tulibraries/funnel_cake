@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem "rails", "7.1.3.4"
 
 gem "base64", "0.2.0"
-gem "blacklight", "~> 7.37.0"
+gem "blacklight", "~> 8.0.1"
 gem "blacklight_oai_provider", github: "projectblacklight/blacklight_oai_provider", branch: "main"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap", "~> 4.6"
@@ -45,6 +45,7 @@ end
 
 group :test do
   gem "capybara", ">= 2.15"
+  gem "launchy"
   gem "rspec"
   gem "rspec-rails"
   gem "webmock"

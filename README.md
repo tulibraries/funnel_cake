@@ -6,7 +6,7 @@ For more information, see [About the PA Digital Aggregator](https://padigital.or
 
 ## System requirements
 
-- Ruby 2.7.2
+- Ruby 3.3.0
 
 Getting set up for local development
 ---------
