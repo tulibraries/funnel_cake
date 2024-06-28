@@ -5,19 +5,6 @@ workflows:
   run_tests:
     jobs:
       - run_tests
-  deploy:
-    jobs:
-      - dev_deploy:
-         filters:
-           branches:
-             only:
-               - main
-      - prod_deploy:
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^v[0-9]+(\.[0-9]+)*$/
 
 jobs:
   run_tests:
@@ -27,7 +14,7 @@ jobs:
           TZ: "America/New_York"
           RAILS_ENV: test
 
-      - image: cimg/postgres:11.13
+      - image: cimg/postgres:16.2
         environment:
           RAILS_ENV: test
           TZ: "America/New_York"
@@ -58,30 +45,3 @@ jobs:
       - run:
           name: Run ruby tests
           command: bundle exec rspec
-  dev_deploy:
-    docker:
-      - image: cimg/python:3.10.13
-        environment:
-          PIPENV_VENV_IN_PROJECT: true
-    steps:
-      - checkout
-      - add_ssh_keys:
-          fingerprints:
-            - "96:52:81:94:2a:1f:32:82:cd:b5:2d:e3:e3:9e:9d:08"
-      - run:
-          command: bash .circleci/deploy-dev.sh
-          no_output_timeout: 30m
-
-  prod_deploy:
-    docker:
-      - image: cimg/python:3.10.13
-        environment:
-          PIPENV_VENV_IN_PROJECT: true
-    steps:
-      - checkout
-      - add_ssh_keys:
-          fingerprints:
-            - "96:52:81:94:2a:1f:32:82:cd:b5:2d:e3:e3:9e:9d:08"
-      - run:
-          command: bash .circleci/deploy-prod.sh
-          no_output_timeout: 30m
