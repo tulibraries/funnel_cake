@@ -25,7 +25,7 @@ RUN apk add -U --no-cache \
       git=2.45.2-r0 \
       libxslt-dev=1.1.39-r1 \
       postgresql16-dev=16.3-r0 \
-      nodejs=20.13.1-r0 \
+      nodejs=20.15.1-r0 \
       yarn=1.22.22-r0 && \
     bundle config set --local without "development test" && \
     bundle install --jobs=8 && \
