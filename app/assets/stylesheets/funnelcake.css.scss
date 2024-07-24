@@ -114,12 +114,20 @@ span.constraint .remove {
 	flex: 0 0 50% !important;
 }
 
+/* Blacklight 8 Adjustments */
+
 .facet-limit-active .card-header .btn {
-	color: #000
+	color: #000;
 }
 
 .blacklight-catalog-index {
 	.blacklight-icons {
 		width: 32px;
+	}
+}
+
+.blacklight-catalog-show {
+	header.documentHeader.row {
+		margin-left: 0px;
 	}
 }
