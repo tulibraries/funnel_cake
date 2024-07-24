@@ -120,14 +120,31 @@ span.constraint .remove {
 	color: #000;
 }
 
-.blacklight-catalog-index {
-	.blacklight-icons {
-		width: 32px;
-	}
-}
-
 .blacklight-catalog-show {
 	header.documentHeader.row {
 		margin-left: 0px;
+	}
+}
+
+.navbar {
+	padding-top: 0.1em;
+	.navbar-nav {
+		margin-top: 0.5rem;
+	}
+}
+
+.navbar-search {
+	padding-top: 0.5rem
+}
+
+search {
+	select#search_field {
+		width: 3.6rem;
+	}
+	button {
+		width: 6.5em;
+	}
+	.submit-search-text {
+		margin-right: 0.3em;
 	}
 }
