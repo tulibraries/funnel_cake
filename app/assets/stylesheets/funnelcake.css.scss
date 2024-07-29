@@ -148,3 +148,9 @@ search {
 		margin-right: 0.3em;
 	}
 }
+
+#facet-preview_ssim .facet-values {
+  li {
+    word-break: break-all;
+  }
+}
