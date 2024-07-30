@@ -154,3 +154,7 @@ search {
     word-break: break-all;
   }
 }
+
+.page-link.disabled, .disabled > .page-link {
+  background-color: #fff;
+}
