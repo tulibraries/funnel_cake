@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/funnel_cake_index.git
-  revision: e1e7f972567bc5d221bfe8f60d65d1308ee6781a
+  revision: efa6dc00c44d68b8cc5485e67194e32b34e4d677
   specs:
     funnel_cake_index (0.0.1)
       gli
@@ -129,7 +129,7 @@ GEM
       xpath (~> 3.2)
     childprocess (5.0.0)
     coderay (1.1.3)
-    concurrent-ruby (1.3.3)
+    concurrent-ruby (1.3.4)
     connection_pool (2.4.1)
     crack (1.0.0)
       bigdecimal
@@ -339,7 +339,7 @@ GEM
     regexp_parser (2.9.2)
     reline (0.5.9)
       io-console (~> 0.5)
-    rexml (3.3.4)
+    rexml (3.3.5)
       strscan
     rsolr (2.6.0)
       builder (>= 2.1.2)
