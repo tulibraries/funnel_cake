@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/funnel_cake_index.git
-  revision: cefb47151d17a9d12ed7d92c693cb57d9d06851b
+  revision: e97e020f8671a4b54c4123d9322bcf053f2ca6e0
   specs:
     funnel_cake_index (0.0.1)
       gli
