@@ -16,7 +16,7 @@
 }
 
 .default-thumbnail {
-	background: asset-data-url('default-thumbnail.png') no-repeat;
+	background: url("default-thumbnail.png") no-repeat;
 	float: right;
 	padding: 10px;
 	background-size: 100px;
