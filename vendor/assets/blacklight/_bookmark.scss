@@ -1,0 +1,20 @@
+label.toggle-bookmark {
+	font-weight: inherit;
+	min-width: 8.5em;
+}
+
+.bookmark-toggle {
+	.no-js & {
+		input[type="submit"] {
+			display: inline
+		}
+
+		div.toggle-bookmark {
+			display: none
+		}
+	}
+
+	input[type="submit"] {
+		display: none;
+	}
+}
