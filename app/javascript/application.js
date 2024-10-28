@@ -2,4 +2,4 @@
 
 import "@popperjs/core"
 import "bootstrap" 
-import "blacklight"
+import Blacklight from "blacklight"

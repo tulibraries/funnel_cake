@@ -4,6 +4,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "autoprefixer": "^10.4.20",
+    "blacklight-frontend": "^8.4.0",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "nodemon": "^3.1.7",
