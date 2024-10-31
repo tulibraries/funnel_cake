@@ -83,7 +83,7 @@ $ rails db:migrate
 #### Start the Funnelcake Application Server
 
 ```
-$ bundle exec rails server
+$ bundle exec rails server, or bin/dev to watch for and recompile ccs changes
 ```
 
 #### To start up a local instance of solr cloud
