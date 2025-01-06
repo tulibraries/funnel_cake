@@ -189,7 +189,7 @@ GEM
     httpclient (2.8.3)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
-    importmap-rails (2.0.3)
+    importmap-rails (2.1.0)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
@@ -502,7 +502,7 @@ DEPENDENCIES
   dotenv-rails
   fieldhand
   funnel_cake_index!
-  importmap-rails (~> 2.0)
+  importmap-rails (~> 2.1)
   jquery-rails
   launchy
   listen (>= 3.0.5, < 3.10)
