@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem "rails", "7.2.2"
+gem "rails", "7.2.2.1"
 
 gem "base64", "0.2.0"
 gem "blacklight", "~> 8.7.0"
@@ -14,7 +14,7 @@ gem "cssbundling-rails", "~> 1.4"
 gem "dotenv-rails"
 gem "fieldhand"
 gem "funnel_cake_index", github: "tulibraries/funnel_cake_index"
-gem "importmap-rails", "~> 2.0"
+gem "importmap-rails", "~> 2.1"
 gem "jquery-rails"
 gem "okcomputer"
 gem "pg"
