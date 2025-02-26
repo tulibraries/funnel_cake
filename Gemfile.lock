@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/funnel_cake_index.git
-  revision: 9d951e3d5061c534d0dd8d3b29117c280cab3f14
+  revision: d9999aa283a23fb4e414f53d65d3579a0a48e21f
   specs:
     funnel_cake_index (0.0.1)
       gli
@@ -189,7 +189,8 @@ GEM
     http-cookie (1.0.8)
       domain_name (~> 0.5)
     http-form_data (2.3.0)
-    httpclient (2.8.3)
+    httpclient (2.9.0)
+      mutex_m
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.1.0)
