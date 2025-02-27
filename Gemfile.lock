@@ -101,7 +101,7 @@ GEM
     benchmark (0.4.0)
     bigdecimal (3.1.9)
     bindex (0.8.1)
-    blacklight (8.8.2)
+    blacklight (8.8.3)
       globalid
       i18n (>= 1.7.0)
       jbuilder (~> 2.7)
@@ -503,7 +503,7 @@ PLATFORMS
 
 DEPENDENCIES
   base64 (= 0.2.0)
-  blacklight (~> 8.8.2)
+  blacklight (~> 8.8.3)
   blacklight_oai_provider!
   bootsnap (>= 1.1.0)
   bootstrap
