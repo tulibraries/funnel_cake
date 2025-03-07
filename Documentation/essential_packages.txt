@@ -1,3 +1,2 @@
 view_component
-rexml
-net-imap
+cgi
