@@ -7,7 +7,7 @@ export #exports the .env.prod variables
 IMAGE ?= tulibraries/padigital
 VERSION ?= $(DOCKER_IMAGE_VERSION)
 HARBOR ?= harbor.k8s.temple.edu
-BASE_IMAGE ?= harbor.k8s.temple.edu/library/ruby:3.3-alpine
+BASE_IMAGE ?= harbor.k8s.temple.edu/library/ruby:3.4-alpine
 PLATFORM ?= linux/x86_64
 CLEAR_CACHES ?= no
 SECRET_KEY_BASE ?= $(PADIGITAL_SECRET_KEY_BASE)
