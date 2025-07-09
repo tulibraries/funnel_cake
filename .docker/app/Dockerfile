@@ -38,11 +38,11 @@ RUN apk add -U --no-cache \
     rm -rf tmp/* && \
     apk del build-dependencies && \
     rm -rf /var/cache/apk/ && \
-    chown nobody -R /app/tmp && \
-    chown nobody -R /app/log && \
+    mkdir -p /secure-tmp && chmod 700 /secure-tmp && \
+    mkdir -p /secure-tmp/log && chmod 700 /secure-tmp/log && \
     ln -s .env.prod .env
 
-USER nobody
+USER 65534
 
 ENTRYPOINT [".docker/app/entrypoint.sh"]
 EXPOSE 3000
