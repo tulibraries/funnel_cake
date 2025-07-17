@@ -37,17 +37,18 @@ jobs:
           bundler-cache: true
 
       - name: Setup Postgres
-        uses: mullwar/setup-postgres@v2
-        with:
-          postgresql version: '16'
-          postgresql db: postgres
-          postgresql user: postgres
-          postgresql password: password
-          postgresql port: 5432
+        uses: ikalnytskyi/action-setup-postgres@v7
+        id: postgres
 
-      - name: Create DB role
+      - env:
+          PGSERVICE: "${{ steps.postgres.outputs.service-name }}"
         run: |
-          psql -c "create role funnelcake with createdb login password 'password';" -U postgres
+          createuser funnelcake --createdb --login --pwprompt
+          psql -c "ALTER USER funnelcake WITH PASSWORD 'password'"
+
+      #- name: Create DB role
+      #  run: |
+      #    psql -c "create role funnelcake with createdb login password 'password';" -U postgres
 
       - name: Setup database
         run: bundle exec rails db:setup
