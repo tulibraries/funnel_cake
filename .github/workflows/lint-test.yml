@@ -10,6 +10,10 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        ruby-version: ['3.4']
     env:
       RAILS_ENV: test
     steps:
@@ -17,7 +21,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.4.3
+          ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
       - name: Run RuboCop
         run: bundle exec rubocop
@@ -32,7 +36,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.4.3
+          ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
 
       - name: Setup Postgres
