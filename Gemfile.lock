@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/funnel_cake_index.git
-  revision: 5c711cf0bc02e671bebda1c4f3f537b606bb64d9
+  revision: 36be20a69cbbfd4b02bd7040dc02e1295be38a68
   specs:
     funnel_cake_index (0.0.1)
       gli
@@ -149,7 +149,7 @@ GEM
     erb (5.0.2)
     erubi (1.13.1)
     execjs (2.10.0)
-    faraday (2.13.1)
+    faraday (2.13.2)
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
@@ -290,7 +290,7 @@ GEM
       faraday (< 3)
       faraday-follow_redirects (>= 0.3.0, < 2)
     okcomputer (1.19.0)
-    ostruct (0.6.2)
+    ostruct (0.6.3)
     ox (2.14.18)
     parallel (1.27.0)
     parser (3.3.8.0)
