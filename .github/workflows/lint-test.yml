@@ -43,7 +43,7 @@ jobs:
       - env:
           PGSERVICE: "${{ steps.postgres.outputs.service-name }}"
         run: |
-          createuser funnelcake --createdb --login --pwprompt
+          createuser funnelcake --createdb
           psql -c "ALTER USER funnelcake WITH PASSWORD 'password'"
 
       #- name: Create DB role
