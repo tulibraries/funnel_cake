@@ -46,10 +46,6 @@ jobs:
           createuser funnelcake --createdb
           psql -c "ALTER USER funnelcake WITH PASSWORD 'password'"
 
-      #- name: Create DB role
-      #  run: |
-      #    psql -c "create role funnelcake with createdb login password 'password';" -U postgres
-
       - name: Setup database
         run: bundle exec rails db:setup
 
