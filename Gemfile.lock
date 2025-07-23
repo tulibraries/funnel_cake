@@ -190,7 +190,7 @@ GEM
       mutex_m
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
-    importmap-rails (2.1.0)
+    importmap-rails (2.2.0)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
@@ -364,7 +364,7 @@ GEM
       erb
       psych (>= 4.0.0)
     regexp_parser (2.10.0)
-    reline (0.6.1)
+    reline (0.6.2)
       io-console (~> 0.5)
     rexml (3.4.1)
     rsolr (2.6.0)
@@ -514,7 +514,7 @@ DEPENDENCIES
   dotenv-rails
   fieldhand
   funnel_cake_index!
-  importmap-rails (~> 2.1)
+  importmap-rails (~> 2.2)
   jquery-rails
   launchy
   listen (>= 3.0.5, < 3.10)
