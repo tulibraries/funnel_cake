@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/funnel_cake_index.git
-  revision: a2311ece4f89155334832bc2fe092bccd9bc0596
+  revision: ca57678d3aa8262226a106fdafcaace88b3f60e4
   specs:
     funnel_cake_index (0.0.1)
       base64
@@ -369,7 +369,7 @@ GEM
     regexp_parser (2.11.2)
     reline (0.6.2)
       io-console (~> 0.5)
-    rexml (3.4.1)
+    rexml (3.4.2)
     rsolr (2.6.0)
       builder (>= 2.1.2)
       faraday (>= 0.9, < 3, != 2.0.0)
