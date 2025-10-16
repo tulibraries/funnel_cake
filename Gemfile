@@ -26,6 +26,7 @@ gem "turbolinks", "~> 5"
 gem "twitter-typeahead-rails", "0.11.1"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "uglifier", ">= 1.3.0"
+gem "uri", ">= 1.0.4"
 
 
 group :development, :test do
