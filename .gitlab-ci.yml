@@ -48,7 +48,7 @@ tag:
 qa_deploy:
   variables:
     IMAGE: $HARBOR/tulibraries/padigital
-    RANCHER: rancher-np
+    RANCHER: np-rancher
     CLUSTER: $DEV_CLUSTER
   stage: deploy
   extends: .helm_setup
@@ -78,7 +78,7 @@ tag_release:
 prod_deploy:
   variables:
     IMAGE: harbor.k8s.temple.edu/tulibraries/padigital
-    RANCHER: rancher
+    RANCHER: prod-rancher
     CLUSTER: $PROD_CLUSTER
   stage: deploy
   extends: .helm_setup
