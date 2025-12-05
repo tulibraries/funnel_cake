@@ -14,7 +14,7 @@ ARG SECRET_KEY_BASE
 
 # gcompat is required for m1 build.
 RUN apk add -U --no-cache \
-      bash=5.2.37-r0 \
+      bash=5.3.3-r1 \
       gcompat=1.1.0-r4 \
       libxslt=1.1.43-r3 \
       postgresql16-client=16.11-r0 \
@@ -22,10 +22,10 @@ RUN apk add -U --no-cache \
       tzdata=2025b-r0 && \
     apk add -U --no-cache --virtual build-dependencies \
       build-base=0.5-r3 \
-      git=2.49.1-r0 \
+      git=2.52.0-r0 \
       libxslt-dev=1.1.43-r3 \
       postgresql16-dev=16.11-r0 \
-      nodejs=22.16.0-r2 \
+      nodejs=24.11.1-r0 \
       yaml=0.2.5-r2 \
       yaml-dev=0.2.5-r2 \
       yarn=1.22.22-r1 && \
