@@ -289,7 +289,8 @@ GEM
       faraday (< 3)
       faraday-follow_redirects (>= 0.3.0, < 2)
       rexml
-    okcomputer (1.19.0)
+    okcomputer (1.19.1)
+      benchmark
     ostruct (0.6.3)
     ox (2.14.23)
       bigdecimal (>= 3.0)
