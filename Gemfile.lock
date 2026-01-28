@@ -140,7 +140,8 @@ GEM
     cssbundling-rails (1.4.3)
       railties (>= 6.0.0)
     csv (3.3.5)
-    dalli (3.2.8)
+    dalli (4.2.0)
+      logger
     date (3.5.1)
     diff-lcs (1.6.2)
     domain_name (0.6.20240107)
