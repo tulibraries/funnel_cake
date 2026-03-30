@@ -3,14 +3,14 @@
   "private": true,
   "dependencies": {
     "@popperjs/core": "^2.11.8",
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.27",
     "blacklight-frontend": "^8.4.0",
-    "bootstrap": "^5.3.3",
-    "bootstrap-icons": "^1.11.3",
-    "nodemon": "^3.1.7",
-    "postcss": "^8.4.47",
-    "postcss-cli": "^11.0.0",
-    "sass": "^1.80.3"
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
+    "nodemon": "^3.1.14",
+    "postcss": "^8.5.8",
+    "postcss-cli": "^11.0.1",
+    "sass": "^1.97.3"
   },
   "scripts": {
     "build:css:compile": "sass ./app/assets/stylesheets/application.css.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
