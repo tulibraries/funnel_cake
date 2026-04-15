@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
 
   scope id: /([^\/]+?)(?=\.json|\.xml|$|\/)/ do
-    resource :catalog, only: [:index], as: "catalog", path: "/catalog", controller: "catalog" do
+    resource :catalog, only: [], as: "catalog", path: "/catalog", controller: "catalog" do
       concerns :searchable
     end
     concern :exportable, Blacklight::Routes::Exportable.new
