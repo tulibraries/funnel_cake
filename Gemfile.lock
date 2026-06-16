@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/funnel_cake_index.git
-  revision: 18e0b80c115333fa2cd08ebeef7f5d32f614b37d
+  revision: ce0e10721bc59e3247ea59d9321b2c20ee6766b1
   specs:
     funnel_cake_index (0.0.1)
       base64
@@ -161,7 +161,7 @@ GEM
       logger
     faraday-follow_redirects (0.3.0)
       faraday (>= 1, < 3)
-    faraday-net_http (3.4.2)
+    faraday-net_http (3.4.4)
       net-http (~> 0.5)
     ffi (1.17.4-aarch64-linux-gnu)
     ffi (1.17.4-aarch64-linux-musl)
