@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/funnel_cake_index.git
-  revision: 569149ee60b7d686575a085bb5ebf27cf7e7f27a
+  revision: 541f2b6f80368e76404b9b3ca71d61d5957cb05b
   specs:
     funnel_cake_index (0.0.1)
       base64
@@ -139,7 +139,7 @@ GEM
     crass (1.0.7)
     cssbundling-rails (1.4.3)
       railties (>= 6.0.0)
-    csv (3.3.5)
+    csv (3.3.6)
     dalli (5.0.5)
       logger
     date (3.5.1)
@@ -171,9 +171,6 @@ GEM
     ffi (1.17.4-x86_64-darwin)
     ffi (1.17.4-x86_64-linux-gnu)
     ffi (1.17.4-x86_64-linux-musl)
-    ffi-compiler (1.4.2)
-      ffi (>= 1.15.5)
-      rake
     fieldhand (0.12.0)
       ox (~> 2.5)
     gli (2.22.2)
@@ -183,16 +180,16 @@ GEM
     hashdiff (1.2.1)
     hashie (5.1.0)
       logger
-    http (5.3.1)
-      addressable (~> 2.8)
+    http-2 (1.2.1)
+    http (6.0.4)
       http-cookie (~> 1.0)
-      http-form_data (~> 2.2)
-      llhttp-ffi (~> 0.5.0)
+      llhttp (~> 0.6.1)
     http-cookie (1.1.6)
       domain_name (~> 0.5)
-    http-form_data (2.3.0)
     httpclient (2.9.0)
       mutex_m
+    httpx (1.8.1)
+      http-2 (>= 1.2.0)
     i18n (1.15.2)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.2.3)
@@ -236,9 +233,7 @@ GEM
       logger
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    llhttp-ffi (0.5.1)
-      ffi-compiler (~> 1.0)
-      rake (~> 13.0)
+    llhttp (0.6.2)
     logger (1.7.0)
     loofah (2.25.2)
       crass (~> 1.0.2)
@@ -448,13 +443,15 @@ GEM
     sqlite3 (2.9.5-x86_64-linux-musl)
     thor (1.5.0)
     timeout (0.6.1)
-    traject (3.8.3)
+    traject (3.9.1)
+      base64
       concurrent-ruby (>= 0.8.0)
       csv
       dot-properties (>= 0.1.1)
       hashie (>= 3.1, < 6)
-      http (>= 3.0, < 6)
+      http (>= 3.0, < 7)
       httpclient (~> 2.5)
+      httpx (~> 1.4)
       marc (~> 1.0)
       marc-fastxmlwriter (~> 1.0)
       mutex_m
