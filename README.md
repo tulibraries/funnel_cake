@@ -1,6 +1,6 @@
 Funnel Cake
 ---------
-[Funnel Cake](https://funnelcake.padigital.org/) is an internal site to search and view PA Digital aggregated metadata for quality assessment. It is built with [Blacklight](https://projectblacklight.org/). Funnel Cake also serves as the development and production endpoint for PA Digital's OAI-PMH feed.
+[Funnel Cake](https://funnelcake.temple.edu/) is an internal site to search and view PA Digital aggregated metadata for quality assessment. It is built with [Blacklight](https://projectblacklight.org/). Funnel Cake also serves as the development and production endpoint for PA Digital's OAI-PMH feed.
 
 For more information, see [About the PA Digital Aggregator](https://padigital.org/about-aggregator/).
 
