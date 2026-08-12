@@ -28,7 +28,7 @@ class CsvController < CatalogController
 
   def render_search_results_as_csv
     show_fields = blacklight_config.show_fields.map { |solr_name, show_field| { solr_name: solr_name, label: show_field.label } }
-    csv_result = CSV.generate(headers: true) do |csv|
+    csv_result = CSV.generate(headers: true, col_sep: "|") do |csv|
       csv << show_fields.map { |field| field[:label] }
       # Loop through all results until response nextCursorMark is the same as requested cursorMark
       # CursorMark params logic is handled by the additional processor chain step in CsvSearchBuilder
