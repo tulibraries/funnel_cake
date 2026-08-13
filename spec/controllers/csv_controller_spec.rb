@@ -7,12 +7,12 @@ RSpec.describe CsvController, type: :controller do
     subject(:stream) { controller.csv_stream }
 
     it "is lazy: the header row is produced without querying solr" do
-      expect(stream.next).to start_with("Title,Alternative Title")
+      expect(stream.next).to start_with("Title|Alternative Title")
       expect(WebMock).not_to have_requested(:any, /solr/)
     end
 
     it "labels every configured show field" do
-      labels = stream.next.parse_csv
+      labels = stream.next.parse_csv(col_sep: CsvController::COL_SEP)
       expect(labels).to eq(controller.blacklight_config.show_fields.values.map(&:label))
     end
   end

@@ -28,12 +28,14 @@ class CsvController < CatalogController
   end
 
 
+  COL_SEP = "|"
+
   def csv_stream
     fields = csv_fields
     Enumerator.new do |csv|
-      csv << CSV.generate_line(fields.map { |field| field[:label] })
+      csv << CSV.generate_line(fields.map { |field| field[:label] }, col_sep: COL_SEP)
       each_document do |doc|
-        csv << CSV.generate_line(fields.map { |field| Array(doc.fetch(field[:solr_name], nil)).join(" ; ") })
+        csv << CSV.generate_line(fields.map { |field| Array(doc.fetch(field[:solr_name], nil)).join(" ; ") }, col_sep: COL_SEP)
       end
     end
   end

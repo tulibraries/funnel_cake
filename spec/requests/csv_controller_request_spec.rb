@@ -51,6 +51,6 @@ RSpec.describe "CSV Controller", type: :request do
     # Proxies must not buffer the export back up; that buffering is what
     # produced 504s on large result sets.
     expect(response.headers["X-Accel-Buffering"]).to eq("no")
-    expect(response.body).to start_with("Title,Alternative Title")
+    expect(response.body).to start_with("Title|Alternative Title")
   end
 end
