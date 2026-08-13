@@ -4,6 +4,6 @@
     <%= t("funnelcake.export_as") %> <span class="caret"></span>
   </button>
   <div class="dropdown-menu dropdown-menu-right" role="menu">
-    <%= link_to('csv', csv_path(params.merge(format: "csv")), data: {turbolinks: false}, class: 'dropdown-item') %>
+    <%= link_to('csv', csv_path(search_state.to_h.merge(format: "csv")), data: {turbolinks: false}, class: 'dropdown-item') %>
   </div>
 </div>

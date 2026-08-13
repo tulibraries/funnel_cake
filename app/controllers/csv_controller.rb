@@ -5,6 +5,9 @@ require "csv"
 class CsvController < CatalogController
   configure_blacklight do |config|
     config.search_builder_class = CsvSearchBuilder
+    # The export pages through solr by carrying a cursor in the url, so
+    # cursorMark has to survive blacklight's search state allowlist.
+    config.search_state_fields += [:cursorMark]
   end
 
   def index
