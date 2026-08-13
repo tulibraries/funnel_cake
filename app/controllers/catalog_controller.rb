@@ -238,7 +238,7 @@ class CatalogController < ApplicationController
 
     config.add_search_field("id", label: "Identifier") do |field|
       field.solr_parameters = {
-        qf: "id_tsim",
+        qf: "id_search",
       }
     end
 

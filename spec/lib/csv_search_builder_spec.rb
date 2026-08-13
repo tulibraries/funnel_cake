@@ -37,8 +37,13 @@ RSpec.describe CsvSearchBuilder , type: :model do
       end
     end
 
-    it "adds sets row to 500" do
-      expect(solr_parameters["rows"]).to eq("500")
+    it "sets rows to the batch size" do
+      expect(solr_parameters["rows"]).to eq(described_class::ROWS_PER_BATCH)
+    end
+
+    it "limits the returned fields to the ones the csv renders" do
+      expect(solr_parameters["fl"].split(",")).to match_array(
+        (subject.blacklight_config.show_fields.keys + ["id"]).uniq)
     end
 
     it "adds a custom sort" do
