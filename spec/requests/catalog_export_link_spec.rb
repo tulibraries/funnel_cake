@@ -5,8 +5,6 @@ require "rails_helper"
 RSpec.describe "Catalog export link", type: :request do
   let(:base_solr_url) { "127.0.0.1:8983/solr/blacklight-core-test/select" }
 
-  # The link forwards the current search to the csv export. Building it from
-  # raw params raises once the params are no longer blanket permitted.
   it "renders the csv export link on the search results page" do
     stub_request(:any, base_solr_url)
       .with(query: hash_including({}))
