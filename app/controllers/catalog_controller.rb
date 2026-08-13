@@ -211,6 +211,13 @@ class CatalogController < ApplicationController
       }
     end
 
+    config.add_search_field("collection", label: "Collection Name") do |field|
+      field.solr_parameters = {
+        qf: "${collection_qf}",
+        pf: "${collection_pf}"
+      }
+    end
+
     # Specifying a :qt only to show it's possible, and so our internal automated
     # tests can test it. In this case it's the same as
     # config[:default_solr_parameters][:qt], so isn't actually neccesary.
