@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "rails_helper"
+require "csv"
 
 RSpec.describe "CSV Controller", type: :request do
 
@@ -26,7 +27,10 @@ RSpec.describe "CSV Controller", type: :request do
     expect(page1).to have_been_requested.once
     expect(page2).to have_been_requested.once
     expect(page3).to have_been_requested.once
+    rows = CSV.parse(response.body, col_sep: "|")
     # Preview field from the last item in the last fixture file
-    expect(response.body).to include("https://archive.org/details/LVRR_1866_Report,https://archive.org/services/img/LVRR_1866_Report")
+    expect(rows.flatten).to include("https://archive.org/details/LVRR_1866_Report")
+    expect(rows.flatten).to include("https://archive.org/services/img/LVRR_1866_Report")
+    expect(response.body).to include("|")
   end
 end
