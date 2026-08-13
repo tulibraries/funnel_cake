@@ -21,7 +21,8 @@ RSpec.describe "CSV Controller", type: :request do
     .to_return(body: File.new(file_fixture("cursorMark=page3.json")), status: 200)
 
     get "/csv", params: { action: "index", controller: "catalog", format: "csv" }
-    expect(response.content_type).to eq("text/csv")
+    expect(response.content_type).to eq("text/csv; charset=utf-8")
+    expect(response.headers["Content-Disposition"]).to include("attachment")
 
 
     expect(page1).to have_been_requested.once
@@ -32,5 +33,24 @@ RSpec.describe "CSV Controller", type: :request do
     expect(rows.flatten).to include("https://archive.org/details/LVRR_1866_Report")
     expect(rows.flatten).to include("https://archive.org/services/img/LVRR_1866_Report")
     expect(response.body).to include("|")
+  end
+
+  it "streams the response instead of buffering the whole export" do
+    stub_request(:any, base_solr_url)
+      .with(query: hash_including({ "cursorMark" => "*" }))
+      .to_return(body: File.new(file_fixture("cursorMark=page1.json")), status: 200)
+    stub_request(:any, base_solr_url)
+      .with(query: hash_including({ "cursorMark" => "page2" }))
+      .to_return(body: File.new(file_fixture("cursorMark=page2.json")), status: 200)
+    stub_request(:any, base_solr_url)
+      .with(query: hash_including({ "cursorMark" => "page3" }))
+      .to_return(body: File.new(file_fixture("cursorMark=page3.json")), status: 200)
+
+    get "/csv", params: { action: "index", controller: "catalog", format: "csv" }
+
+    # Proxies must not buffer the export back up; that buffering is what
+    # produced 504s on large result sets.
+    expect(response.headers["X-Accel-Buffering"]).to eq("no")
+    expect(response.body).to start_with("Title|Alternative Title")
   end
 end
