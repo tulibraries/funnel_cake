@@ -15,7 +15,7 @@ class CsvController < CatalogController
       format.csv do
         response.headers["Content-Type"] = "text/csv; charset=utf-8"
         response.headers["Content-Disposition"] = ActionDispatch::Http::ContentDisposition.format(
-          disposition: "attachment", filename: "#{csv_file_name}.csv")
+          disposition: "attachment", filename: "#{csv_file_name}.txt")
         response.headers["Cache-Control"] = "no-cache"
         response.headers["Last-Modified"] = Time.current.httpdate
         response.headers["X-Accel-Buffering"] = "no"
