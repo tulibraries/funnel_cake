@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class CatalogController < ApplicationController
-  before_action(:catalog_params, only: [:index, :show])
   include Blacklight::Catalog
 
   configure_blacklight do |config|
@@ -264,10 +263,4 @@ class CatalogController < ApplicationController
     # default 'mySuggester', uncomment and provide it below
     # config.autocomplete_suggester = 'mySuggester'
   end
-
-  private
-
-    def catalog_params
-      params.permit!
-    end
 end
