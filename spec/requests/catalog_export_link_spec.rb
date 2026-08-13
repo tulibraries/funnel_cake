@@ -15,6 +15,7 @@ RSpec.describe "Catalog export link", type: :request do
     get "/catalog", params: { q: "test", sort: "date_si desc" }
 
     expect(response).to have_http_status(:ok)
-    expect(response.body).to match(/csv\?[^"]*format=csv/)
+    link = response.body[/href="\/csv\?[^"]*"/]
+    expect(link).to include("format=csv", "q=test", "sort=date_si")
   end
 end
