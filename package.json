@@ -12,6 +12,9 @@
     "postcss-cli": "^11.0.1",
     "sass": "^1.97.3"
   },
+  "resolutions": {
+    "nanoid": "3.3.18"
+  },
   "scripts": {
     "build:css:compile": "sass ./app/assets/stylesheets/application.css.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
     "build:css:prefix": "postcss ./app/assets/builds/application.css --use=autoprefixer --output=./app/assets/builds/application.css",
