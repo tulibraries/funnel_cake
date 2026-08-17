@@ -20,7 +20,7 @@ class MissingFirstFacetPaginator < Blacklight::Solr::FacetPaginator
   private
 
     def missing_values
-      @missing_values ||= @all.select { |item| missing_value?(item) }
+      @missing_values ||= @all.select { |item| missing_value?(item) && item.hits.to_i.positive? }
     end
 
     def values

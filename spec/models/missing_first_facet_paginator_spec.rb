@@ -33,6 +33,13 @@ RSpec.describe MissingFirstFacetPaginator do
       paginator = described_class.new(values, limit: 3, offset: 0, sort: "count")
       expect(paginator.items.map(&:value)).to eq(%w[Alpha Beta Gamma])
     end
+
+    it "suppresses the missing value when its hit count is zero" do
+      zero_missing = facet_item(nil, 0, missing: true)
+      paginator = described_class.new(values + [zero_missing], limit: 3, offset: 0, sort: "count")
+
+      expect(paginator.items.map(&:value)).to eq(%w[Alpha Beta Gamma])
+    end
   end
 
   describe "on a later page" do
