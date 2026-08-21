@@ -14,6 +14,28 @@ RSpec.describe CsvSearchBuilder , type: :model do
     expect(subject.default_processor_chain).to include(:add_cursor_mark)
   end
 
+  # The export has to be scoped exactly like the html results it mirrors. A
+  # scoped search field carries its qf/pf in the search field configuration,
+  # so leaving that processor out of the chain made the export search every
+  # field and return far more rows than the user saw on screen.
+  describe "search field scoping" do
+    let(:search_builder) do
+      described_class.new(context).with(
+        ActionController::Parameters.new(q: "pa", search_field: "collection"))
+    end
+
+    it "applies the search field's solr parameters" do
+      expect(subject.to_h).to include("qf" => "${collection_qf}", "pf" => "${collection_pf}")
+    end
+
+    it "scopes the export the same way the catalog search does" do
+      catalog_params = ::SearchBuilder.new(CatalogController.new).with(
+        ActionController::Parameters.new(q: "pa", search_field: "collection")).to_h
+
+      expect(subject.to_h.slice("q", "qf", "pf")).to eq(catalog_params.slice("q", "qf", "pf"))
+    end
+  end
+
   describe "#add_cursor_mark" do
     let(:prepocess) {}
     before(:each) do
