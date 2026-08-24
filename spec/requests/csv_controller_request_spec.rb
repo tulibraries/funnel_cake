@@ -35,6 +35,20 @@ RSpec.describe "CSV Controller", type: :request do
     expect(response.body).to include("|")
   end
 
+  it "scopes the export to the search field the user searched" do
+    scoped = stub_request(:any, base_solr_url)
+      .with(query: hash_including({ "qf" => "${collection_qf}", "q" => "pa" }))
+      .to_return(body: File.new(file_fixture("cursorMark=page3.json")), status: 200)
+
+    get "/csv", params: { action: "index", controller: "catalog", format: "csv",
+                          q: "pa", search_field: "collection" }
+
+    # A missing qf here means solr falls back to the default handler and the
+    # export returns every record matching "pa" in any field. Every paged
+    # request has to carry the scoping, not just the first.
+    expect(scoped).to have_been_requested.twice
+  end
+
   it "streams the response instead of buffering the whole export" do
     stub_request(:any, base_solr_url)
       .with(query: hash_including({ "cursorMark" => "*" }))

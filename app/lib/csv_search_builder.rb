@@ -7,6 +7,9 @@ class CsvSearchBuilder < ::SearchBuilder
   # csv export is limited to the expected results
   self.default_processor_chain = [
     :default_solr_parameters,
+    # add_search_field_default_parameters is what sends the search field's
+    # qf/pf to solr.
+    :add_search_field_default_parameters,
     :add_query_to_solr,
     :add_facet_fq_to_solr,
     :add_solr_fields_to_query,
