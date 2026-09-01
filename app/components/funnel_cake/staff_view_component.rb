@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Funnelcake
+module FunnelCake
   class StaffViewComponent < Blacklight::Component
     def initialize(document:)
       @document = document
