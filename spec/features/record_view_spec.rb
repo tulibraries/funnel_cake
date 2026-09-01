@@ -9,4 +9,15 @@ RSpec.describe "Record View" do
       expect(page).to have_text("Staff View")
     end
   end
+
+  it "displays search navigation controls once" do
+    VCR.use_cassette("record_view_search_navigation", match_requests_on: [:query]) do
+      visit root_path(q: "cat", search_field: "all_fields")
+
+      first("article.document a").click
+
+      expect(page).to have_text("Start Over", count: 1)
+      expect(page).to have_text("Back to Search", count: 1)
+    end
+  end
 end
