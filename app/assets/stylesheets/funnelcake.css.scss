@@ -161,6 +161,15 @@ search {
   }
 }
 
+#facet-url_ssim,
+#facet-preview_ssim,
+#facet-iiifmanifest_ssim,
+#facet-iiifbaseurl_ssim {
+  .facet-label {
+    min-width: 0;
+  }
+}
+
 .page-link.disabled, .disabled > .page-link {
   background-color: #fff;
 }
