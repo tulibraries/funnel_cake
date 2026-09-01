@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/funnel_cake_index.git
-  revision: 2a8808aa27d69fafc020cbf6bb6c875b2d793058
+  revision: 5c321e74dc2f4038f1ffd1b162108b399146c5a3
   specs:
     funnel_cake_index (0.0.1)
       base64
@@ -144,7 +144,7 @@ GEM
       logger
     date (3.5.1)
     diff-lcs (1.6.2)
-    domain_name (0.6.20240107)
+    domain_name (0.6.20260829)
     dot-properties (0.1.4)
       bundler (>= 2.2.33)
     dotenv (3.2.0)
@@ -180,7 +180,7 @@ GEM
     hashdiff (1.2.1)
     hashie (5.1.0)
       logger
-    http-2 (1.2.1)
+    http-2 (1.2.2)
     http (6.0.4)
       http-cookie (~> 1.0)
       llhttp (~> 0.6.1)
@@ -188,7 +188,7 @@ GEM
       domain_name (~> 0.5)
     httpclient (2.9.0)
       mutex_m
-    httpx (1.8.1)
+    httpx (1.8.3)
       http-2 (>= 1.2.0)
     i18n (1.15.2)
       concurrent-ruby (~> 1.0)
