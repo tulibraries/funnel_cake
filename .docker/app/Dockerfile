@@ -1,5 +1,5 @@
 # Allow base image override
-ARG BASE_IMAGE="harbor.k8s.temple.edu/library/ruby:3.4-alpine"
+ARG BASE_IMAGE="harbor.k8s.temple.edu/library/ruby:4.0-alpine"
 
 # hadolint ignore=DL3006,DL3026
 FROM "${BASE_IMAGE}"
