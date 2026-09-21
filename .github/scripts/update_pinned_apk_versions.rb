@@ -21,7 +21,7 @@ def pinned_packages(contents)
 
     in_apk_add = true if stripped.start_with?("RUN apk add ")
     if in_apk_add
-      match = stripped.match(/^([a-z0-9.+_-]+)=([^\s\\]+)\s*\\?$/i)
+      match = stripped.match(/^([a-z0-9.+_-]+)=([^\s\\]+)(?:\s+&&)?\s*\\?$/i)
       packages[match[1]] = match[2] if match
       in_apk_add = false unless stripped.end_with?("\\")
     end
