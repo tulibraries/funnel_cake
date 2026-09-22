@@ -57,3 +57,5 @@ group :production do
   gem "dalli"
   gem "connection_pool"
 end
+
+gem "json", "< 3"
