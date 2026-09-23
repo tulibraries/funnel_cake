@@ -35,6 +35,7 @@ group :development, :test do
   gem "rubocop",  require: false
   gem "rubocop-rails", require: false
   gem "vcr"
+  gem "json", "~> 2.21.2"
 end
 
 group :development do
