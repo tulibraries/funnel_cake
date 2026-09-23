@@ -21,7 +21,7 @@ gem "pg"
 gem "popper_js", ">= 2.11.8"
 gem "propshaft", "~> 1.3"
 gem "puma", "~> 8.0"
-gem "rsolr", ">= 1.0", "< 3"
+gem "rsolr", ">= 1.0", "< 4"
 gem "turbolinks", "~> 5"
 gem "twitter-typeahead-rails", "0.11.1"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

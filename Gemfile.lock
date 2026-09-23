@@ -382,9 +382,9 @@ GEM
     reline (0.7.0)
       io-console (~> 0.5)
     rexml (3.4.4)
-    rsolr (2.6.0)
+    rsolr (3.0.0)
       builder (>= 2.1.2)
-      faraday (>= 0.9, < 3, != 2.0.0)
+      faraday (>= 1.0, < 3)
     rspec (3.13.2)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -535,7 +535,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 8.0)
   rails (~> 8.1)
-  rsolr (>= 1.0, < 3)
+  rsolr (>= 1.0, < 4)
   rspec
   rspec-rails
   rubocop
