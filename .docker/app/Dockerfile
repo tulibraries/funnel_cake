@@ -8,7 +8,7 @@ WORKDIR /app
 
 COPY . .
 
-USER root
+USER 0
 
 ARG SECRET_KEY_BASE
 
