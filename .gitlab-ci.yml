@@ -30,15 +30,15 @@ lint:
     DF: ".docker/app/Dockerfile"
   except:
     - tags
-    
+
 build:
   stage: build
   extends: .build_and_scan_image
   variables:
-    DF: ".docker/app/Dockerfile --build-arg SECRET_KEY_BASE=$SECRET_KEY_BASE --no-cache"
+    DF: ".docker/app/Dockerfile --no-cache"
   except:
     - tags
-    
+
 tag:
   stage: tag
   extends: .tag_image
