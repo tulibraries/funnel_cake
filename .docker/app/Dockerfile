@@ -8,9 +8,7 @@ WORKDIR /app
 
 COPY . .
 
-USER root
-
-ARG SECRET_KEY_BASE
+USER 0
 
 # gcompat is required for m1 build.
 RUN apk add -U --no-cache \
@@ -33,7 +31,7 @@ RUN apk add -U --no-cache \
     bundle install --jobs=8 && \
     find "$GEM_HOME" -name yarn.lock -exec rm "{}" \; && \
     cp config/database.yml.k8 config/database.yml && \
-    RAILS_ENV=production SECRET_KEY_BASE=$SECRET_KEY_BASE bundle exec rails assets:precompile && \
+    RAILS_ENV=production SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile && \
     rm -rf node_modules && \
     rm -rf tmp/* && \
     apk del build-dependencies && \
