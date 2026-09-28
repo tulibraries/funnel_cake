@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 BotChallengePage.configure do |config|
 
   # Can globally disable in configuration if desired
@@ -20,16 +22,16 @@ BotChallengePage.configure do |config|
   #
   config.skip_when = ->(config) {
     helpers.current_page?(okcomputer_path)
-  #   # maybe you want to globally exempt a heartbeat path
-  #   current_page?(rails_health_check_path) ||
-  #
-  #   # Here's a way to identify browser `fetch` API requests; note
-  #   # it can be faked by an "attacker" so you might not want to do this globally
-  #   (request.headers["sec-fetch-dest"] == "empty") ||
-  #
-  #   # Maybe you want to exempt an uptime checker or other trusted bot
-  #   #based on shared secret
-  #   (headers["x-some-secret"] == "some_shared_secret")
+    #   # maybe you want to globally exempt a heartbeat path
+    #   current_page?(rails_health_check_path) ||
+    #
+    #   # Here's a way to identify browser `fetch` API requests; note
+    #   # it can be faked by an "attacker" so you might not want to do this globally
+    #   (request.headers["sec-fetch-dest"] == "empty") ||
+    #
+    #   # Maybe you want to exempt an uptime checker or other trusted bot
+    #   #based on shared secret
+    #   (headers["x-some-secret"] == "some_shared_secret")
   }
 
   # Hook after a bot challenge is presented, for logging or other
