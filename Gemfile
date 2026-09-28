@@ -58,3 +58,5 @@ group :production do
   gem "dalli"
   gem "connection_pool"
 end
+
+gem "bot_challenge_page", "~> 1.2"

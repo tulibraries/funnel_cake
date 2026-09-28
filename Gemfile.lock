@@ -116,6 +116,9 @@ GEM
       msgpack (~> 1.5)
     bootstrap (5.3.8)
       popper_js (>= 2.11.8, < 3)
+    bot_challenge_page (1.2.0)
+      http (>= 5.2, < 7)
+      rails (>= 7.1, < 8.2)
     builder (3.3.0)
     byebug (13.0.0)
       reline (>= 0.6.0)
@@ -515,6 +518,7 @@ DEPENDENCIES
   blacklight_oai_provider!
   bootsnap (>= 1.1.0)
   bootstrap
+  bot_challenge_page (~> 1.2)
   byebug
   capybara (>= 2.15)
   connection_pool
