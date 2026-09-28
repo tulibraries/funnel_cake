@@ -1,7 +1,7 @@
 BotChallengePage.configure do |config|
 
   # Can globally disable in configuration if desired
-  config.enabled = true
+  config.enabled = !Rails.env.test?
 
   # Get from CloudFlare Turnstile: https://www.cloudflare.com/application-services/products/turnstile/
   # Some testing keys are also available: https://developers.cloudflare.com/turnstile/troubleshooting/testing/
