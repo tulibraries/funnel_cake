@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/funnel_cake_index.git
-  revision: f986319d040bb68316616c4bec7f11ccc64e7efe
+  revision: 3f498f1148f809d402bc339898d85faedf6d8d63
   specs:
     funnel_cake_index (0.0.1)
       base64
@@ -142,12 +142,12 @@ GEM
     crass (1.0.7)
     cssbundling-rails (1.4.3)
       railties (>= 6.0.0)
-    csv (3.3.6)
+    csv (3.3.7)
     dalli (5.2.2)
       logger
     date (3.5.1)
     diff-lcs (1.6.2)
-    domain_name (0.6.20260907)
+    domain_name (0.7.20261007)
     dot-properties (0.1.4)
       bundler (>= 2.2.33)
     dotenv (3.2.0)
@@ -158,13 +158,13 @@ GEM
     erb (6.0.7)
     erubi (1.13.1)
     execjs (2.10.1)
-    faraday (2.14.4)
-      faraday-net_http (>= 2.0, < 3.5)
+    faraday (2.15.1)
+      faraday-net_http (>= 2.0, < 3.6)
       json
       logger
     faraday-follow_redirects (0.5.0)
       faraday (>= 1, < 3)
-    faraday-net_http (3.4.4)
+    faraday-net_http (3.5.0)
       net-http (~> 0.5)
     ffi (1.17.4-aarch64-linux-gnu)
     ffi (1.17.4-aarch64-linux-musl)
@@ -181,9 +181,9 @@ GEM
     globalid (1.4.0)
       activesupport (>= 6.1)
     hashdiff (1.2.1)
-    hashie (5.1.0)
+    hashie (5.2.0)
       logger
-    http-2 (1.2.3)
+    http-2 (1.3.0)
     http (6.0.4)
       http-cookie (~> 1.0)
       llhttp (~> 0.6.1)
@@ -191,7 +191,7 @@ GEM
       domain_name (~> 0.5)
     httpclient (2.9.0)
       mutex_m
-    httpx (1.8.4)
+    httpx (1.9.0)
       http-2 (>= 1.2.0)
     i18n (1.15.2)
       concurrent-ruby (~> 1.0)
