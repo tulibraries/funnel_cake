@@ -20,7 +20,7 @@ RUN apk add -U --no-cache \
       tzdata=2026f-r0 && \
     apk add -U --no-cache --virtual build-dependencies \
       build-base=0.5-r4 \
-      git=2.54.0-r0 \
+      git=2.54.1-r0 \
       libxslt-dev=1.1.43-r4 \
       postgresql17-dev=17.11-r0 \
       nodejs=24.22.1-r1 \
