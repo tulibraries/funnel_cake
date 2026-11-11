@@ -13,7 +13,8 @@
     "sass": "^1.97.3"
   },
   "resolutions": {
-    "nanoid": "3.3.18"
+    "nanoid": "3.3.18",
+    "minimatch": "^10.2.6"
   },
   "scripts": {
     "build:css:compile": "sass ./app/assets/stylesheets/application.css.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
