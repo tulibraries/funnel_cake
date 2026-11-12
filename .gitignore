@@ -23,9 +23,9 @@
 !/storage/.keep
 
 /node_modules
-/yarn-error.log
-
 /public/assets
+/app/assets/builds/*
+!/app/assets/builds/.keep
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
