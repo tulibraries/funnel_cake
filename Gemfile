@@ -10,7 +10,7 @@ gem "blacklight", "~> 8.13.0"
 gem "blacklight_oai_provider", github: "projectblacklight/blacklight_oai_provider", branch: "main"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap"
-gem "cssbundling-rails", "~> 1.4"
+gem "dartsass-rails", "~> 0.5"
 gem "dotenv-rails"
 gem "fieldhand"
 gem "funnel_cake_index", github: "tulibraries/funnel_cake_index"

@@ -23,16 +23,12 @@ RUN apk add -U --no-cache \
       git=2.54.1-r0 \
       libxslt-dev=1.1.43-r4 \
       postgresql17-dev=17.11-r0 \
-      nodejs=24.22.3-r0 \
       yaml=0.2.5-r2 \
-      yaml-dev=0.2.5-r2 \
-      yarn=1.22.22-r1 && \
+      yaml-dev=0.2.5-r2 && \
     bundle config set --local without "development test" && \
     bundle install --jobs=8 && \
-    find "$GEM_HOME" -name yarn.lock -exec rm "{}" \; && \
     cp config/database.yml.k8 config/database.yml && \
     RAILS_ENV=production SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile && \
-    rm -rf node_modules && \
     rm -rf tmp/* && \
     apk del build-dependencies && \
     rm -rf /var/cache/apk/ && \
