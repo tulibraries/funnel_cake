@@ -24,18 +24,18 @@ gem "puma", "~> 8.0"
 gem "rsolr", ">= 1.0", "< 4"
 gem "turbolinks", "~> 5"
 gem "twitter-typeahead-rails", "0.11.1"
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "tzinfo-data", platforms: [:windows, :jruby]
 gem "uglifier", ">= 1.3.0"
 gem "uri", ">= 1.0.4"
 
 
 group :development, :test do
-  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "byebug", platforms: [:mri, :windows]
   gem "pry-rails"
   gem "rubocop",  require: false
   gem "rubocop-rails", require: false
   gem "vcr"
-  gem "json", "~> 2.21.2"
+  gem "json"
 end
 
 group :development do
