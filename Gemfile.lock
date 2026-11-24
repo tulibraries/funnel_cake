@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/funnel_cake_index.git
-  revision: 1712ed890a61d42db9c5ef0c066c2119d06189ad
+  revision: d4cce3992788f99c7ecd625e08f768bd316cf172
   specs:
     funnel_cake_index (0.0.1)
       base64
@@ -148,7 +148,7 @@ GEM
       sass-embedded (~> 1.63)
     date (3.6.0)
     diff-lcs (1.6.2)
-    domain_name (0.7.20261031)
+    domain_name (0.7.20261117)
     dot-properties (0.1.4)
       bundler (>= 2.2.33)
     dotenv (3.2.0)
@@ -213,7 +213,7 @@ GEM
       llhttp (~> 0.6.1)
     http-cookie (1.1.6)
       domain_name (~> 0.5)
-    httpclient (2.10.0)
+    httpclient (2.11.0)
       mutex_m
     httpx (1.9.1)
       http-2 (>= 1.2.0)
@@ -657,7 +657,7 @@ CHECKSUMS
   dartsass-rails (0.5.1) sha256=f19510fb1b29c76c1739a06954d615f1d20ad653b6fc668dd7c68542bb303a1a
   date (3.6.0) sha256=18ac945c4e24ebd93534f8eab8c2fd8c5604b3e977105b3798d62a1e8d27b580
   diff-lcs (1.6.2) sha256=9ae0d2cba7d4df3075fe8cd8602a8604993efc0dfa934cff568969efb1909962
-  domain_name (0.7.20261031) sha256=6091f1c2b4781302de49eefef9ebcfbd758b84279898ea8918d0a59fdc5c0cc9
+  domain_name (0.7.20261117) sha256=13f6a6cc6190892a75041b606d90bfb358ecbd869c1099fdd57b83b11d79269e
   dot-properties (0.1.4) sha256=c41f5681d53e946ed5a2afa45bfd2dc8a4475980f62eba069ca83aaba2637004
   dotenv (3.2.0) sha256=e375b83121ea7ca4ce20f214740076129ab8514cd81378161f11c03853fe619d
   dotenv-rails (3.2.0) sha256=657e25554ba622ffc95d8c4f1670286510f47f2edda9f68293c3f661b303beab
@@ -693,7 +693,7 @@ CHECKSUMS
   http (6.0.4) sha256=3768f902489ea8309424f1881c668af8d3ca73675648a755dfe2cb0030d42d26
   http-2 (1.3.0) sha256=58fc8636c2b937b651853e9f6d9ada9fdaa8bf80b5a7d0333ce15653e5ca6ac1
   http-cookie (1.1.6) sha256=ba4b82be64de61dc281243dac70e3c382c45142f20268ed9276a3670c93feaa9
-  httpclient (2.10.0) sha256=8c10f65a5e618b9e1c37dc95fccec9e84953b74748257f65930c68c6f221a4ed
+  httpclient (2.11.0) sha256=9ebadb93fa2815f1916932546db49dc03e85902af04deb2c4a6ddf7bbd54ea89
   httpx (1.9.1) sha256=06396e98dc99edfd37859910c77303c7eacd29d76f20d1f6b8b1bea3dfec99a9
   i18n (1.15.2) sha256=00f9eb62412fe593b2a65a97daa75300d37abb8f7202ec748e94b6d46a9dd1b5
   importmap-rails (2.2.3) sha256=7101be2a4dc97cf1558fb8f573a718404c5f6bcfe94f304bf1f39e444feeb16a
